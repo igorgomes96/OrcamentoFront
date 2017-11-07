@@ -1,0 +1,82 @@
+<div class="content">
+
+	<table class="table table-sm">
+		<thead>
+			<tr>
+				<th>Codigo do CR</th>
+				<th>Matrícula</th>
+				<th>Nome</th>
+				<th>Cargo Atual</th>
+				<th>Salário Atual</th>
+				<th>Mês Reajuste</th>
+				<th>Novo Cargo</th>
+				<th>Novo Salário</th>
+				<th width="8%"></th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr ng-repeat="s in ct.reajustes">
+				<td>{{s.CodigoCR}}</td>
+				<td>{{s.Matricula}}</td>
+				<td>{{s.Nome}}</td>
+				<td>{{s.CargoNome}}</td>
+				<td>R$ {{s.Salario | number:2}}</td>
+				<td>{{s.Promocao.MesPromocao | date:'MMM/yy'}}</td>
+				<td>{{s.Promocao.CargoNomePromocao}}</td>
+				<td>R$ {{s.Promocao.SalarioPromocao | number:2}}</td>
+				<td>
+					<button class="btn btn-xs btn-danger pull-right"><i class="fa fa-thumbs-down"></i></button>
+					<button class="btn btn-xs btn-success pull-right" ng-click="ct.aprovar(s)"><i class="fa fa-thumbs-up"></i></button>
+					<button class="btn btn-xs btn-info pull-right" data-toggle="modal" data-target="#modal-info-reajuste" ng-click="ct.reajusteSelecionado = s"><i class="fa fa-info"></i></button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+
+	<!-- Modal -->
+	<div class="modal fade" id="modal-info-reajuste" tabindex="-1" role="dialog" aria-hidden="true">
+	    <div class="modal-dialog modal-lg" role="document">
+	        <div class="modal-content">
+	            <div class="modal-header">
+	                <h5 class="modal-title">Solicitação de Contratação</h5>
+	                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	                    <span aria-hidden="true">&times;</span>
+	                </button>
+	            </div>
+	            <div class="modal-body">
+	                <div class="row">
+	                    <div class="col-sm-12">
+
+	                        <dl class="row">
+	                            <dt class="col-sm-3">Centro de Resultado</dt>
+	                            <dd class="col-sm-9">{{ct.reajusteSelecionado.CodigoCR}}</dd>
+	                            <dt class="col-sm-3">Cargo</dt>
+	                            <dd class="col-sm-9">{{ct.reajusteSelecionado.CargoNome}}</dd>
+	                            <dt class="col-sm-3">CH</dt>
+	                            <dd class="col-sm-9">{{ct.reajusteSelecionado.CargaHoraria}} h</dd>
+	                            <dt class="col-sm-3">Cidade</dt>
+	                            <dd class="col-sm-9">{{ct.reajusteSelecionado.Cidade}}</dd>
+	                            <dt class="col-sm-3">Data Prevista</dt>
+	                            <dd class="col-sm-9">{{ct.reajusteSelecionado.DataContratacao | date:'dd/MMM/yy'}}</dd>
+	                            <dt class="col-sm-3">Quantidade</dt>
+	                            <dd class="col-sm-9">{{ct.reajusteSelecionado.Qtda}}</dd>
+	                            <dt class="col-sm-3">Salário</dt>
+	                            <dd class="col-sm-9">R$ {{ct.reajusteSelecionado.Salario | number:2}}</dd>
+	                            <dt class="col-sm-3">Horário da Solicitação</dt>
+	                            <dd class="col-sm-9">{{ct.reajusteSelecionado.HorarioSolicitacao | date:'dd/MM HH:mm'}}</dd>
+	                            <dt class="col-sm-3">Solicitante</dt>
+	                            <dd class="col-sm-9">{{ct.reajusteSelecionado.Solicitante}}</dd>
+	                            <dt class="col-sm-3">Descrição</dt>
+	                            <dd class="col-sm-9">{{ct.reajusteSelecionado.Descricao}}</dd>
+	                        </dl>
+
+	                    </div>
+	                </div>                  
+	            </div> 
+	        </div>
+	    </div>
+	</div>
+
+</div>

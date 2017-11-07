@@ -1,0 +1,62 @@
+.dash-card {
+	min-height: 100px;
+	width: 100%;
+	text-align: right;
+	padding: 10px;
+	position: relative;
+	box-shadow: darkgrey -2px 3px 1px 1px;
+	margin-bottom: 20px;
+}
+
+.dash-card.small {
+	min-height: 70px;
+}
+
+.dash-card p {
+	position: absolute;
+	margin-bottom: 0;
+	bottom: 3px;
+	right: 12px; 
+	font-size: 14px;
+}
+
+.dash-card h3 {
+	font-size: 3rem;
+	display: inline-block;
+}
+
+.dash-card i {
+	position: absolute;
+	top: 10px;
+	left: 20px;
+}
+
+.dash-card.blue {
+	color: white;
+    background-color: var(--emphasis-bg-color-blue);
+}
+
+.dash-card.yellow {
+	color: #333;
+	background-color: var(--emphasis-bg-color-yellow);
+}
+
+.dash-card.orange {
+	color: white;
+    background-color: var(--emphasis-bg-color-orange);
+}
+
+.dash-card.gray {
+	color: white;
+	background-color: var(--emphasis-bg-color-gray);
+}
+
+.dash-card.red {
+	color: white;
+	background-color: var(--emphasis-bg-color-red);
+}
+
+.container-dash {
+	box-shadow: darkgrey -1px 2px 4px 2px;
+	background-color: #eee;
+}

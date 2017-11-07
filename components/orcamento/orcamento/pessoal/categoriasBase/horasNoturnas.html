@@ -1,0 +1,25 @@
+<table class="table table-sm">
+    <thead>
+        <tr>
+            <th width="7%">Matrícula</th>
+            <th width="20%">Nome</th>
+            <th width="16%">Cargo</th>
+            <th ng-repeat="m in ct.meses" class="text-center">
+                {{m | date:'MMM/yy'}}
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <form name="formHE">
+            <tr ng-repeat="f in ct.funcionarios" ui-input-parent>
+                <td>{{f.Matricula}}</td>
+                <td><p>{{f.Nome}}</p></td>
+                <td><p>{{f.CargoNome}}</p></td>
+                <td ng-repeat="hn in f.HorasNoturnas['hn' + ct.percHN]">
+                    <input type="text" class="form-control text-center input-sm" ng-model="hn.QtdaHoras" required ui-input-child>
+                </td>
+            </tr>
+        </form>
+    </tbody>
+</table>

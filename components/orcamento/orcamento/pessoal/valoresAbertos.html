@@ -1,0 +1,33 @@
+<div class="content">
+
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <th width="20%"></th>
+                <th ng-repeat="m in ct.meses" class="text-center">
+                    {{m | date:'MMM/yy'}}
+                </th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <form name="formAberto">
+                <tr ui-input-parent ng-repeat="v in ct.valoresAbertos">
+                    <td>{{v.Input}}</td>
+                    <td ng-repeat="va in v.Valores | orderBy:'Mes'">
+                        <input type="text" class="form-control text-center" ng-model="va.Valor" required ui-input-child>
+                    </td>
+                </tr>
+            </form>
+        </tbody>
+    </table>
+
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <button class="btn btn-success btn-sm" ng-click="ct.salvar()">Salvar <i class="fa fa-floppy-o"></i></button>
+        </div>
+    </div>
+
+</div>

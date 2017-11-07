@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Orçamento</title>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+	
+	<!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Custom Font -->
+    <link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/module-cards.css">
+	<link rel="stylesheet" href="css/custom-bootstrap.css">
+	<link rel="stylesheet" href="css/menu.css">
+	<link rel="stylesheet" href="css/dashboard.css">
+
+
+
+</head>
+<body ng-app="orcamentoApp">
+	
+	<nav class="navbar navbar-light">
+		<a class="navbar-brand" href="#">
+			<img src="img/money-icon.png" style="height: 40px;">
+			Orion
+		</a>
+	</nav>
+
+	<div class="main-container" ui-view style="margin: 10px 15px 45px;">	
+	</div>
+
+
+	<div class="footer">
+		Orion System <i class="fa fa-copyright"></i>
+	</div>
+
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+
+	<!-- AngularJS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+	<!-- ui.router -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
+
+	<!-- App -->
+	<script src="js/app.js"></script>
+
+	<!-- Route Config -->
+	<script src="js/config/routeConfig.js"></script>
+
+	<!-- Controllers -->
+	<script src="components/orcamento/ciclos/orcamentoCiclosCtrl.js"></script>
+	<script src="components/orcamento/dashboard/dashboardCtrl.js"></script>
+	<script src="components/orcamento/orcamento/orcamentoCtrl.js"></script>
+	<script src="components/orcamento/simulacoes/simulacoesCtrl.js"></script>
+	<script src="components/orcamento/orcamento/pessoal/orcamentoPessoalBaseCtrl.js"></script>
+	<script src="components/orcamento/orcamento/pessoal/orcamentoPessoalContratacoesCtrl.js"></script>
+	<script src="components/orcamento/orcamento/pessoal/orcamentoTransfEnviadasCtrl.js"></script>
+	<script src="components/orcamento/orcamento/pessoal/orcamentoTransfRecebidasCtrl.js"></script>
+	<script src="components/orcamento/orcamento/pessoal/orcamentoValoresAbertosCtrl.js"></script>
+	<script src="components/pth/subModulos/subModulosPthCtrl.js"></script>
+	<script src="components/pth/orcado/filaSolicitacoesContratacoesOrcadoCtrl.js"></script>
+	<script src="components/pth/orcado/filaSolicitacoesDesligamentosOrcadoCtrl.js"></script>
+	<script src="components/pth/orcado/filaSolicitacoesReajustesOrcadoCtrl.js"></script>
+	<script src="components/pth/orcado/filaSolicitacoesAprovacoesOrcadoCtrl.js"></script>
+	<script src="components/usuarios/usuariosCtrl.js"></script>
+	<script src="components/premissas/acordos/premissasAcordosCtrl.js"></script>
+	<script src="components/premissas/beneficios/premissasBeneficiosCtrl.js"></script>
+	<script src="components/premissas/encargos/premissasEncargosCtrl.js"></script>
+	<script src="components/premissas/encargos/premissasEncargosEmpresaCtrl.js"></script>
+	<script src="components/premissas/encargos/premissasEncargosFilialCtrl.js"></script>
+	<script src="components/premissas/salarios/premissasSalariosCtrl.js"></script>
+
+	<!-- APIs -->
+	<script src="js/APIs/funcionariosApi.js"></script>
+	<script src="js/APIs/crsApi.js"></script>
+	<script src="js/APIs/cargosApi.js"></script>
+	<script src="js/APIs/filiaisApi.js"></script>
+	<script src="js/APIs/contratacoesApi.js"></script>
+	<script src="js/APIs/transferenciasApi.js"></script>
+	<script src="js/APIs/ciclosApi.js"></script>
+	<script src="js/APIs/pthOrcadoSolicitacoesApi.js"></script>
+	<script src="js/APIs/usuariosApi.js"></script>
+	<script src="js/APIs/encargosApi.js"></script>
+
+	<!-- Service -->
+	<script src="js/services/menuService.js"></script>
+	<script src="js/services/dataService.js"></script>
+
+	<!-- Filters -->
+	<script src="js/filters/ellipsisFilter.js"></script>
+
+
+	<!-- UI Input Sibling -->
+	<script src="lib/uiInputSiblingsDirective.js"></script>
+
+	<!-- Sweet Alert -->
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+	<!-- Animation -->
+	<script src="js/animations.js"></script>
+
+	<!-- HighCharts -->
+	<script src="lib/highcharts/code/highcharts.js"></script>
+
+	<!-- Bootstrap -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+</body>
+</html>

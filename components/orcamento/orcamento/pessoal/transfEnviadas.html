@@ -1,0 +1,38 @@
+<div class="content">
+    <div ng-if="ct.transfEnviadas.length > 0">
+        <table class="table table-sm">
+            <thead>
+                <tr>
+                    <th>Matrícula</th>
+                    <th>Nome</th>
+                    <th>Cargo</th>
+                    <th>Salário</th>
+                    <th>CR de Origem</th>
+                    <th>CR de Destino</th>
+                    <th>Data de Solicitação</th>
+                    <th>Mês de Transf.</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr ng-repeat="t in ct.transfEnviadas | orderBy:'-DataSolicitacao'">
+                    <td>{{t.MatriculaFuncionario}}</td>
+                    <td>{{t.NomeFuncionario}}</td>
+                    <td>{{t.CargoNome}}</td>
+                    <td>R$ {{t.Salario | number:2}}</td>
+                    <td>{{t.CROrigem}}</td>
+                    <td>{{t.CRDestino}}</td>
+                    <td>{{t.DataSolicitacao | date:'dd-MM-yyyy'}}</td>
+                    <td>{{t.MesTransferencia | date:'MMM/yy'}}</td>
+                    <td>{{t.Status}}</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <div ng-if="ct.transfEnviadas.length <= 0">
+        <h6>Nenhuma Transferência Enviada</h6>
+    </div>
+</div>

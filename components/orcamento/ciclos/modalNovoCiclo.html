@@ -1,0 +1,70 @@
+
+<!-- Modal -->
+<div class="modal fade" id="modal-novo-ciclo" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Abertura de Ciclo</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-12">
+
+                        <form role="form" name="formNovoCiclo" novalidate>
+
+                            <div  class="row">
+
+                                <div class="form-group col-sm-12">
+                                    <label>Descrição do Ciclo</label>
+                                    <textarea class="form-control" ng-model="ct.novoCiclo.Descricao" required></textarea>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+
+                                <div class="form-group col-sm-6">
+                                    <label>Mês Início</label>
+                                    <input class="form-control" type="date" name="inputMesInicio" id="inputMesInicio" required ng-model="ct.novoCiclo.DataInicio">
+                                </div>
+
+                                <div class="form-group col-sm-6">
+                                    <label>Mês Fim</label>
+                                    <input class="form-control" type="date" name="inputMesFim" id="inputMesFim" required ng-model="ct.novoCiclo.DataFim">
+                                </div>
+
+                            </div>
+
+                            <div  class="row">
+
+                                <div class="form-group col-sm-6">
+                                    <label for="selectCicloReal">Ciclo Real Base</label>
+                                    <select class="form-control" name="selectCicloReal" id="selectCicloReal" required ng-model="ct.realSelecionado" ng-options="c.Descricao for c in ct.ciclosReal" ng-change="ct.loadMesesRealSelecionado()">
+                                    </select>
+                                </div>
+
+                                <div class="form-group col-sm-6">
+                                    <label for="selectMesReal">Mês Base</label>
+                                    <select class="form-control" name="selectMesReal" id="selectMesReal" required ng-model="ct.novoCiclo.MesRealBase" ng-options="(m | date:'MMM/yy') for m in ct.realSelecionadoMeses">
+                                    </select>
+                                </div>
+
+                            </div>
+                        </form>
+
+                    </div>
+                </div>                  
+            </div>  
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" class="btn btn-default" data-dismiss="modal" ng-disabled="formNovoCiclo.$invalid" ng-click="ct.salvarCiclo()">Salvar</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->

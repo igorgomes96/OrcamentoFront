@@ -1,0 +1,156 @@
+<div ng-include="'templates/menu.html'"></div>
+
+<div class="content-view-menu">
+
+	<h2 class="title">Dashboard</h2>
+
+	<div class="row">
+		<div class="col-md-4">
+			<div class="form-group">
+				<label>Centro de Resultado</label>
+				<select class="form-control">
+					<option value="">(Selecione o CR)</option>
+				</select>
+			</div>
+		</div>
+	</div>	
+
+	<hr>
+	
+	<div class="row">
+		<div class="col-lg-3 col-md-12">
+			<div class="row">
+				<div class="col-md-12">
+					<div style="height: 185px;">	
+						<h5>Jan/18 - Dez/18</h5>
+						<p>Ciclo 20<br>
+						Orçamento</p>
+						<small style="position: absolute;bottom: 0;">Útlima Atualização: 10/03 20:50</small>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="dash-card orange" style="height: 133px;">
+						<i class="fa fa-3x fa-usd"></i>
+						<h2>120,000.00</h2>
+						<p>Custo Total</p>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+
+		<div class="col-lg-9">
+			<div class="container-dash">
+				<div id="container-graf-custos" style="height: 352px; margin: 0 auto"></div>
+			</div>
+		</div>
+		
+	</div>
+
+	<div class="row">
+		<div class="col-lg-3 col-md-12">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="dash-card gray">
+						<i class="fa fa-3x fa-users"></i>
+						<h3>32</h3>
+						<p>Qtda. Média (Base)</p>
+					</div>
+				</div>
+				
+			</div>
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="dash-card blue">
+						<i class="fa fa-3x fa-user-plus"></i>
+						<h3>13</h3>
+						<p>Qtda. de Contratações</p>
+					</div>
+				</div>
+				
+			</div>
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="dash-card red">
+						<i class="fa fa-3x fa-user-times"></i>
+						<h3>5</h3>
+						<p>Qtda. de Desligamentos</p>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+
+		<div class="col-lg-9 col-md-12">
+			<div class="container-dash">
+				<div id="container-graf-qtdas" style="height: 340px; margin: 0 auto"></div>
+			</div>
+		</div>
+
+	</div>
+
+	<hr>
+
+	<div class="row">
+		<div class="col-lg-2 col-md-4">
+			<div class="dash-card yellow small">
+				<i class="fa fa-2x fa-money"></i>
+				<h6>R$ 40,000.00</h6>
+				<p>Salário</p>
+			</div>
+		</div>
+
+		<div class="col-lg-2 col-md-4">
+			<div class="dash-card yellow small">
+				<i class="fa fa-2x fa-money"></i>
+				<h6>R$ 6,000.00</h6>
+				<p>Férias</p>
+			</div>
+		</div>
+
+		<div class="col-lg-2 col-md-4">
+			<div class="dash-card yellow small">
+				<i class="fa fa-2x fa-money"></i>
+				<h6>R$ 4,000.00</h6>
+				<p>Horas Extras</p>
+			</div>
+		</div>
+
+		<div class="col-lg-2 col-md-4">
+			<div class="dash-card yellow small">
+				<i class="fa fa-2x fa-money"></i>
+				<h6>R$ 0.00</h6>
+				<p>Adicional Noturno</p>
+			</div>
+		</div>
+
+		<div class="col-lg-2 col-md-4">
+			<div class="dash-card yellow small">
+				<i class="fa fa-2x fa-money"></i>
+				<h6>R$ 0.00</h6>
+				<p>Produtividade</p>
+			</div>
+		</div>
+
+		<div class="col-lg-2 col-md-4">
+			<div class="dash-card yellow small">
+				<i class="fa fa-2x fa-money"></i>
+				<h6>R$ 0.00</h6>
+				<p>Comissões</p>
+			</div>
+		</div>
+
+	</div>
+
+
+</div>
+	
+<a ui-sref="orcamentoCiclos" class="link-voltar">
+	<i class="fa fa-arrow-circle-left"></i>
+	Voltar
+</a>

@@ -1,0 +1,49 @@
+<div ng-include="'templates/menu.html'"></div>
+
+<div class="content-view-menu">
+
+	<h2 class="title">Orçamento</h2>
+
+	<div class="form-row">
+		<div class="form-group col-md-4">
+			<label>Centro de Resultado</label>
+			<select class="form-control" ng-options="c.CodigoCR as (c.CodigoCR + ' - ' + c.Descricao) for c in ctOrcamento.crs" ng-model="crSelecionado">
+				<option value="">(Selecione um CR)</option>
+			</select>
+		</div>
+	</div>
+	
+	<div ng-show="crSelecionado">
+		<div class="panel-collapse">
+			<a href class="title" data-target="#viewBase">Pessoal da Base <i class="fa fa-angle-down pull-right"></i></a>
+			<div ui-view="base" id="viewBase" class="collapse show panel-collapsible"></div>
+		</div>
+
+
+		<div class="panel-collapse">
+			<a href class="title" data-target="#viewContratacoes">Contratacões <i class="fa fa-angle-down pull-right"></i></a>
+			<div ui-view="contratacoes" id="viewContratacoes" class="collapse show panel-collapsible"></div>
+		</div>
+
+		<div class="panel-collapse">
+			<a href class="title" data-target="#viewValoresAbertos">Valores Abertos <i class="fa fa-angle-down pull-right"></i></a>
+			<div ui-view="valoresAbertos" id="viewValoresAbertos" class="collapse show panel-collapsible"></div>
+		</div>
+
+		<div class="panel-collapse">
+			<a href class="title" data-target="#viewTransfEnviadas">Transferências - Solicitações Enviadas <i class="fa fa-angle-down pull-right"></i></a>
+			<div ui-view="transfEnviadas" id="viewTransfEnviadas" class="collapse show panel-collapsible"></div>
+		</div>
+
+		<div class="panel-collapse">
+			<a href class="title" data-target="#viewTransfRecebidas">Transferências - Solicitações Recebidas <i class="fa fa-angle-down pull-right"></i></a>
+			<div ui-view="transfRecebidas" id="viewTransfRecebidas" class="collapse show panel-collapsible"></div>
+		</div>
+	</div>
+
+</div>
+
+<a ui-sref="orcamentoCiclos" class="link-voltar">
+	<i class="fa fa-arrow-circle-left"></i>
+	Voltar
+</a>

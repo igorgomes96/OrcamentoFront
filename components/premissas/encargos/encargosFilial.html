@@ -1,0 +1,35 @@
+<div class="content">
+	<table class="table table-sm">
+		<thead>
+			<tr>
+				<th width="25%">Empresa</th>
+				<th width="25%">Cidade</th>
+				<th width="25%">Sindicato</th>
+				<th>SAT</th>
+				<th>FAP</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr ng-repeat="e in ct.encargos">
+				<td>{{e.Empresa}}</td>
+				<td>{{e.Cidade}}</td>
+				<td>{{e.Sindicato}}</td>
+				<td>
+					<div class="input-group">
+	                    <input type="text" class="form-control text-right" ng-model="e.SAT">
+	                    <span class="input-group-addon">%</span>
+	                </div>
+				</td>
+				<td>
+					<div class="input-group">
+	                    <input type="text" class="form-control text-right" ng-model="e.FAP">
+	                    <span class="input-group-addon">%</span>
+	                </div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<button class="btn btn-sm btn-success">Salvar <i class="fa fa-floppy-o"></i></button>
+</div>

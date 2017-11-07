@@ -1,0 +1,60 @@
+<div ng-include="'templates/menu.html'"></div>
+
+<div class="content-view-menu">
+
+	<h2 class="title">Salários</h2>
+
+	<div class="panel-collapse">
+		<a href class="title" data-target="#divSalarios">Salários <i class="fa fa-angle-down pull-right"></i></a>
+		<div id="divSalarios" class="collapse show panel-collapsible">
+			
+			<div class="content">
+				<table class="table table-sm">
+					<thead>
+						<tr>
+							<th width="20%">Cargo</th>
+							<th width="8%">C.H</th>
+							<th width="20%">Cidade</th>
+							<th width="20%">Empresa</th>
+							<th>Faixa 1</th>
+							<th>Faixa 2</th>
+							<th>Faixa 3</th>
+							<th>Faixa 4</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr ng-repeat="s in ct.salarios">
+							<td>{{s.CargoNome}}</td>
+							<td>{{s.CH}}</td>
+							<td>{{s.Cidade}}</td>
+							<td>{{s.Empresa}}</td>
+							<td>
+				                <input type="number" class="form-control text-right" ng-model="s.Faixa1">
+							</td>
+							<td>
+				                <input type="number" class="form-control text-right" ng-model="s.Faixa2">
+							</td>
+							<td>
+				                <input type="number" class="form-control text-right" ng-model="s.Faixa3">
+							</td>
+							<td>
+				                <input type="number" class="form-control text-right" ng-model="s.Faixa4">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<button class="btn btn-sm btn-success">Salvar <i class="fa fa-floppy-o"></i></button>
+			</div>
+		</div>
+	</div>
+
+	
+
+</div>
+
+<a ui-sref="modulos" class="link-voltar">
+	<i class="fa fa-arrow-circle-left"></i>
+	Voltar
+</a>

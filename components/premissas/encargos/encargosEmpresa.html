@@ -1,0 +1,59 @@
+<div class="content">
+	<table class="table table-sm">
+		<thead>
+			<tr>
+				<th width="25%">Empresa</th>
+				<th>13º Salário</th>
+				<th>Férias</th>
+				<th>Sistema S</th>
+				<th>FGTS</th>
+				<th>INSS</th>
+				<th>Aviso Prévio</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr ng-repeat="e in ct.encargos">
+				<td>{{e.Empresa}}</td>
+				<td>
+					<div class="input-group">
+	                    <input type="text" class="form-control text-right" ng-model="e.Salario13">
+	                    <span class="input-group-addon">%</span>
+	                </div>
+				</td>
+				<td>
+					<div class="input-group">
+	                    <input type="text" class="form-control text-right" ng-model="e.Ferias">
+	                    <span class="input-group-addon">%</span>
+	                </div>
+				</td>
+				<td>
+					<div class="input-group">
+	                    <input type="text" class="form-control text-right" ng-model="e.SistemaS">
+	                    <span class="input-group-addon">%</span>
+	                </div>
+				</td>
+				<td>
+					<div class="input-group">
+	                    <input type="text" class="form-control text-right" ng-model="e.FGTS">
+	                    <span class="input-group-addon">%</span>
+	                </div>
+				</td>
+				<td>
+					<div class="input-group">
+	                    <input type="text" class="form-control text-right" ng-model="e.INSS">
+	                    <span class="input-group-addon">%</span>
+	                </div>
+				</td>
+				<td>
+					<div class="input-group">
+	                    <input type="text" class="form-control text-right" ng-model="e.AvisoPrevio">
+	                    <span class="input-group-addon">%</span>
+	                </div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<button class="btn btn-sm btn-success">Salvar <i class="fa fa-floppy-o"></i></button>
+</div>

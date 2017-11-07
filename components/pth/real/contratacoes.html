@@ -1,0 +1,80 @@
+<div class="content">
+	<table class="table table-sm">
+		<thead>
+			<tr>
+				<th>Codigo do CR</th>
+				<th>Cargo</th>
+				<th>C.H.</th>
+				<th>Data Contratação</th>
+				<th>Data Solicitação</th>
+				<th>Qtda</th>
+				<th>Salario</th>
+				<th width="8%"></th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr ng-repeat="s in ct.solicitacoes">
+				<td>{{s.CodigoCR}}</td>
+				<td>{{s.CargoNome}}</td>
+				<td>{{s.CargaHoraria}} h</td>
+				<td>{{s.DataContratacao | date:'dd/MM/yyyy'}}</td>
+				<td>{{s.HorarioSolicitacao | date:'dd/MM HH:mm'}}</td>
+				<td>{{s.Qtda}}</td>
+				<td>R$ {{s.Salario | number:2}}</td>
+				<td>
+					<button class="btn btn-xs btn-danger pull-right"><i class="fa fa-thumbs-down"></i></button>
+					<button class="btn btn-xs btn-success pull-right" ng-click="ct.aprovar(s)"><i class="fa fa-thumbs-up"></i></button>
+					<button class="btn btn-xs btn-info pull-right" data-toggle="modal" data-target="#modal-info-contratacao" ng-click="ct.contratacaoSelecionada = s"><i class="fa fa-info"></i></button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="modal-info-contratacao" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Solicitação de Contratação</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-12">
+
+                        <dl class="row">
+                            <dt class="col-sm-3">Centro de Resultado</dt>
+                            <dd class="col-sm-9">{{ct.contratacaoSelecionada.CodigoCR}}</dd>
+                            <dt class="col-sm-3">Cargo</dt>
+                            <dd class="col-sm-9">{{ct.contratacaoSelecionada.CargoNome}}</dd>
+                            <dt class="col-sm-3">CH</dt>
+                            <dd class="col-sm-9">{{ct.contratacaoSelecionada.CargaHoraria}} h</dd>
+                            <dt class="col-sm-3">Cidade</dt>
+                            <dd class="col-sm-9">{{ct.contratacaoSelecionada.Cidade}}</dd>
+                            <dt class="col-sm-3">Data Prevista</dt>
+                            <dd class="col-sm-9">{{ct.contratacaoSelecionada.DataContratacao | date:'dd/MMM/yy'}}</dd>
+                            <dt class="col-sm-3">Quantidade</dt>
+                            <dd class="col-sm-9">{{ct.contratacaoSelecionada.Qtda}}</dd>
+                            <dt class="col-sm-3">Salário</dt>
+                            <dd class="col-sm-9">R$ {{ct.contratacaoSelecionada.Salario | number:2}}</dd>
+                            <dt class="col-sm-3">Horário da Solicitação</dt>
+                            <dd class="col-sm-9">{{ct.contratacaoSelecionada.HorarioSolicitacao | date:'dd/MM HH:mm'}}</dd>
+                            <dt class="col-sm-3">Solicitante</dt>
+                            <dd class="col-sm-9">{{ct.contratacaoSelecionada.Solicitante}}</dd>
+                            <dt class="col-sm-3">Descrição</dt>
+                            <dd class="col-sm-9">{{ct.contratacaoSelecionada.Descricao}}</dd>
+                        </dl>
+
+                    </div>
+                </div>                  
+            </div> 
+        </div>
+    </div>
+</div>
+

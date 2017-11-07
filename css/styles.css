@@ -1,0 +1,118 @@
+:root {
+  --main-bg-color-gray: #eee;
+  --main-bd-color-gray: #ddd;
+  --main-bg-color-gray-hover: #e4e4e4;
+  --main-bg-color-gray-active: #e0e0e0;
+  --emphasis-bg-color-gray: #696969;
+  --emphasis-bg-color-blue: #0054d2;
+  --emphasis-bg-color-orange: #d85a00;
+  --emphasis-bg-color-red: #c12626;
+  --emphasis-bg-color-yellow: #ece370;
+}
+
+body {
+	color: var(--emphasis-bg-color-gray);
+	font-size: .9rem;
+	background-color: #fafafa;
+}
+
+nav.navbar {
+	background-color: var(--main-bg-color-gray);
+	border-bottom: solid 1px var(--main-bd-color-gray);
+	z-index: 1;
+	position: fixed;
+	width: 100%;
+    top: 0;
+} 
+
+a.link-voltar {
+	position: fixed;
+	bottom: 12px;
+	font-size: 13px;
+	z-index: 2000;
+}
+
+div.footer {
+	position: fixed;
+	height: 40px;
+	font-size: 12px;
+	background-color: var(--main-bg-color-gray);
+	border-top: solid 1px var(--main-bd-color-gray);
+	bottom: 0;
+	width: 100%;
+	padding: 10px 10px 0;
+	text-align: right;
+	z-index: 1000;
+}
+
+
+.menu-collapsed .content-view-menu {
+	margin-left: 48px;
+}
+
+.content-view {
+	padding-top: 70px;
+	margin-bottom: 100px;
+}
+
+.content-view-menu {
+	margin-left: 200px;
+	padding-top: 70px;
+	margin-bottom: 100px;
+}
+
+.title {
+	border-bottom: 2px solid var(--main-bd-color-gray);
+	margin-bottom: 20px;
+	font-weight: normal;
+}
+
+a.title {
+	display: block;
+	text-decoration: none;
+	color: inherit;
+	margin-bottom: 0;
+	font-size: 18px;
+}
+
+div.panel-collapse {
+	margin-bottom: 30px;
+}
+
+div.panel-collapsible {
+	border-left: solid 1px var(--main-bd-color-gray); 
+	border-right: solid 1px var(--main-bd-color-gray); 
+	border-bottom: solid 1px var(--main-bd-color-gray);
+	padding: 0; 
+}
+
+/*div.panel-collapsible .content {
+	padding: 0.9rem;
+	background-color: white;
+}*/
+
+div.content {
+	padding: 0.9rem;
+	background-color: white;
+}
+
+div.panel-menu {
+	margin: 0;
+	background-color: var(--main-bg-color-gray);
+	padding: 10px;
+	border-bottom: solid 1px var(--main-bd-color-gray); 
+	/*border-left: solid 1px var(--main-bd-color-gray); */
+	/*border-right: solid 1px var(--main-bd-color-gray); */
+}
+
+.nav-link {
+	padding: 5px 15px;
+}
+
+.table td button {
+	margin-left: .3rem; 
+}
+
+.table td .input-group {
+	height: 1.7rem;
+}

@@ -1,0 +1,68 @@
+div.menu {
+	width: 200px;
+	position: fixed;
+	height: 100vh;
+	background-color: var(--main-bg-color-gray);
+	left: 0;
+	top: 0;
+	z-index: 0;
+	border-right: solid 1px var(--main-bd-color-gray);
+}
+
+div.menu ul {
+	list-style: none;
+	padding-top: 67px;
+	padding-left: 0;
+}
+
+div.menu .collapse .icon {
+	padding-left: 155px;
+}
+
+div.menu ul li .icon {
+	margin: 0 10px 0 2px;
+	min-width: 22px;
+    text-align: center;
+}
+
+div.menu ul li * {
+	display: inline-block;
+}
+
+div.menu ul li a {
+	padding: 10px;
+	text-decoration: none;
+	border-bottom: solid 1px var(--main-bd-color-gray);
+	width: 100%;
+	color: black;
+}
+
+div.menu ul li a:hover {
+	background-color: var(--main-bg-color-gray-hover);
+}
+
+div.menu ul li a.active {
+	background-color: var(--main-bg-color-gray-active);
+}
+
+
+.menu-collapsed div.menu .collapse .icon {
+	padding-left: 5px;
+}
+
+div.menu .collapse .icon i:after {
+	content: '\f100';
+	font-family: FontAwesome;
+}
+
+.menu-collapsed div.menu ul li .text {
+	display: none;
+}
+
+.menu-collapsed div.menu {
+	width: 50px;
+}
+
+.menu-collapsed div.menu .collapse .icon i:after {
+	content: '\f101';
+}

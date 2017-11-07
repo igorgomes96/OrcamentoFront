@@ -1,0 +1,35 @@
+body {
+	overflow-x: hidden;
+}
+
+label {
+	font-size: .875rem;
+	margin-bottom: 2px;
+}
+
+.table th {
+	border-top: 0;
+}
+
+.btn-xs {
+	padding: 3px 5px;
+	font-size: .8rem;
+}
+
+.table-sm td,
+.table-sm th {
+	padding: .15rem;
+}
+
+.table p {
+	margin: 0;
+}
+
+.form-control {
+	padding: .2rem .2rem;
+	font-size: inherit;
+}
+
+select.form-control {
+	height: inherit !important;
+}

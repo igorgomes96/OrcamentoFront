@@ -1,0 +1,91 @@
+<div class="panel-menu">
+    <ul class="nav nav-pills flex-column flex-sm-row">
+        <li class="nav-item">
+            <a class="flex-sm-fill text-sm-center nav-link" ng-class="{'active': ct.aba == 'Dados'}" ng-click="ct.aba = 'Dados'" href>Dados</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="flex-sm-fill text-sm-center nav-link" ng-class="{'active': ct.aba == 'Promoções'}" ng-click="ct.aba = 'Promoções'" href>Promoções</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="flex-sm-fill text-sm-center nav-link" ng-class="{'active': ct.aba == 'Férias'}" ng-click="ct.aba = 'Férias'" href>Férias</a>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" ng-class="{'active': ct.aba == 'Horas Extras'}" data-toggle="dropdown" href role="button" aria-haspopup="true" aria-expanded="false">Horas Extras<span ng-show="ct.aba == 'Horas Extras'"> {{ct.percHE}}%</span></a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href ng-click="ct.aba = 'Horas Extras';ct.percHE = '170'">170%</a>
+                <a class="dropdown-item" href ng-click="ct.aba = 'Horas Extras';ct.percHE = '100'">100%</a>
+                <a class="dropdown-item" href ng-click="ct.aba = 'Horas Extras';ct.percHE = '75'">75%</a>
+                <a class="dropdown-item" href ng-click="ct.aba = 'Horas Extras';ct.percHE = '60'">60%</a>
+                <a class="dropdown-item" href ng-click="ct.aba = 'Horas Extras';ct.percHE = '50'">50%</a>
+            </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" ng-class="{'active': ct.aba == 'Horas Noturnas'}" data-toggle="dropdown" href role="button" aria-haspopup="true" aria-expanded="false">Horas Noturnas<span ng-show="ct.aba == 'Horas Noturnas'"> {{ct.percHN}}%</span></a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href ng-click="ct.aba = 'Horas Noturnas';ct.percHN = '20'">20%</a>
+                <a class="dropdown-item" href ng-click="ct.aba = 'Horas Noturnas';ct.percHN = '30'">30%</a>
+                <a class="dropdown-item" href ng-click="ct.aba = 'Horas Noturnas';ct.percHN = '40'">40%</a>
+                <a class="dropdown-item" href ng-click="ct.aba = 'Horas Noturnas';ct.percHN = '50'">50%</a>
+                <a class="dropdown-item" href ng-click="ct.aba = 'Horas Noturnas';ct.percHN = '60'">60%</a>
+            </div>
+        </li>
+
+        <li class="nav-item">
+            <a class="flex-sm-fill text-sm-center nav-link" ng-class="{'active': ct.aba == 'Gratificações'}" ng-click="ct.aba = 'Gratificações';ct.eventoAtual = 'Gratificacoes';" href>Gratificações</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="flex-sm-fill text-sm-center nav-link" ng-class="{'active': ct.aba == 'Produtividade'}" ng-click="ct.aba = 'Produtividade';ct.eventoAtual = 'Produtividade';" href>Produtividade</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="flex-sm-fill text-sm-center nav-link" ng-class="{'active': ct.aba == 'Comissão'}" ng-click="ct.aba = 'Comissão';ct.eventoAtual = 'Comissao';" href>Comissão</a>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" ng-class="{'active': ct.aba == 'Outros'}" data-toggle="dropdown" href role="button" aria-haspopup="true" aria-expanded="false">Outros<span ng-show="ct.aba == 'Outros'"> ({{ct.outrosCategoria}})</span></a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href ng-click="ct.aba = 'Outros';ct.outrosCategoria = 'Pro-Labore';ct.eventoAtual = 'ProLabore';">Pro-Labore</a>
+                <a class="dropdown-item" href ng-click="ct.aba = 'Outros';ct.outrosCategoria = 'PGP / PGI';ct.eventoAtual = 'PGP';">PGP / PGI</a>
+                <a class="dropdown-item" href ng-click="ct.aba = 'Outros';ct.outrosCategoria = 'Ajuda de Custo';ct.eventoAtual = 'AjudaCusto';">Ajuda de Custo</a>
+            </div>
+        </li>
+
+    </ul>
+</div>
+
+<div class="content">
+    <div ng-show="ct.aba == 'Dados'">
+        <div ng-include="'components/orcamento/orcamento/pessoal/categoriasBase/dados.html'"></div>
+    </div>
+    <div ng-show="ct.aba == 'Promoções'">
+        <div ng-include="'components/orcamento/orcamento/pessoal/categoriasBase/promocoes.html'"></div>
+    </div>
+    <div ng-show="ct.aba == 'Férias'">
+        <div ng-include="'components/orcamento/orcamento/pessoal/categoriasBase/ferias.html'"></div>
+    </div>
+    <div ng-show="ct.aba == 'Horas Extras'">
+        <div ng-include="'components/orcamento/orcamento/pessoal/categoriasBase/horasExtras.html'"></div>
+    </div>
+    <div ng-show="ct.aba == 'Horas Noturnas'">
+        <div ng-include="'components/orcamento/orcamento/pessoal/categoriasBase/horasNoturnas.html'"></div>
+    </div>
+    <div ng-show="ct.aba == 'Gratificações'">
+        <div ng-include="'components/orcamento/orcamento/pessoal/categoriasBase/eventosFolha.html'"></div>
+    </div>
+    <div ng-show="ct.aba == 'Produtividade'">
+        <div ng-include="'components/orcamento/orcamento/pessoal/categoriasBase/eventosFolha.html'"></div>
+    </div>
+    <div ng-show="ct.aba == 'Comissão'">
+        <div ng-include="'components/orcamento/orcamento/pessoal/categoriasBase/eventosFolha.html'"></div>
+    </div>
+    <div ng-show="ct.aba == 'Outros'">
+        <div ng-include="'components/orcamento/orcamento/pessoal/categoriasBase/eventosFolha.html'"></div>
+    </div>
+    
+    <button class="btn btn-success btn-sm" ng-click="ct.salvar()">Salvar <i class="fa fa-floppy-o"></i></button>
+</div>

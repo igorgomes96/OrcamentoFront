@@ -1,0 +1,33 @@
+<div class="menu">
+	<ul>
+
+		<li>
+			<a href class="collapse">
+				<div class="icon">
+					<i class="fa fa-lg"></i>
+				</div>
+			</a>
+		</li>
+
+		<li>
+			<a ui-sref="{{m.state}}" ng-class="{'active': m.active}" ng-repeat="m in menu">
+				<div class="icon">
+					<i class="fa fa-lg" ng-class="m.icon"></i>
+				</div>
+				<div class="text">
+					{{m.text}}
+				</div>
+			</a>
+		</li>
+
+	</ul>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		$('.menu a.collapse').click(function() {
+			$('body').toggleClass('menu-collapsed');
+		});
+	});
+</script>

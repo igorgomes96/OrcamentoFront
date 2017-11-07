@@ -1,0 +1,37 @@
+<table class="table table-sm">
+    <thead>
+        <tr>
+            <th width="8%">Matrícula</th>
+            <th width="21%">Nome</th>
+            <th width="20%">Cargo Atual</th>
+            <th width="10%">Salário Atual</th>
+            <th width="8%">Mês</th>
+            <th width="20%">Cargo Novo</th>
+            <th width="10%">Salário Novo</th>
+        </tr>
+    </thead>
+    <tbody>
+        <form name="formPessoal">
+            <tr ng-repeat="f in ct.funcionarios">
+                <td>{{f.Matricula}}</td>
+                <td><p>{{f.Nome | ellipsis:12:5}}</p></td>
+                <td><p class="ellipsis">{{f.CargoNome}}</p></td>
+                <td>R$ {{f.Salario | number:2}}</td>
+                <td>
+                    <select class="form-control" ng-options="m as (m | date:'MMM/yy') for m in ct.meses" ng-model="f.Promocao.MesPromocao">
+                        <option value="">(Selecione o Mês)</option>
+                    </select>
+                </td>
+                <td>
+                    <select class="form-control" ng-options="c.CargoNome as c.CargoNome for c in ct.cargos" ng-model="f.Promocao.CargoNomePromocao">
+                        <option value="">(Selecione o cargo)</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="number" class="form-control" ng-model="f.Promocao.SalarioPromocao" placeholder="Novo Salário">
+                </td>
+            </tr>
+
+        </form>
+    </tbody>
+</table>

@@ -1,0 +1,70 @@
+<div class="content-view">
+		
+	<h2 class="title">Ciclos</h2>
+
+	<div class="row">
+
+		<div class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
+			<div class="container-module-card">
+				<a href class="module-card green" data-toggle="modal" data-target="#modal-novo-ciclo">
+					<i class="fa fa-calendar-plus-o fa-3x"></i>
+					<h5>Novo</h5>
+					<small>Clique aqui para abrir um ciclo</small>
+				</a>
+			</div>
+		</div>
+
+	</div>
+
+	<h5 class="title">Ciclos Abertos</h5>
+
+	<div class="row">
+		<div class="container-module-card col-lg-2 col-md-3 col-sm-4 col-xs-6" ng-repeat="c in ct.ciclos">
+			<div class="module-card">
+				<a ui-sref="orcamentoDashboard">
+					<i class="fa fa-calendar fa-3x"></i>
+					<h5>Ciclo {{c.Codigo}}</h5>
+					<small>{{c.DataInicio | date:'MMM/yy'}} - {{c.DataFim | date:'MMM/yy'}}</small>
+				</a>
+				<button class="options dropdown-toggle" id="dropdownOptions{{$index}}" data-toggle="dropdown"></button>
+				<div class="dropdown-menu" aria-labelledby="dropdownOptions{{$index}}">
+				    <a class="dropdown-item" href>Fechar</a>
+				    <a class="dropdown-item" href>Excluir</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="row">
+
+		<div class="col-md-12">
+
+
+			<h5 class="title">Ciclos Fechados</h5>
+
+			<div class="row">
+				<div class="col-lg-2 col-md-3 col-sm-4">
+					<label for="anoCiclo">Ano</label>
+					<div class="input-group input-group-sm">
+						<span class="input-group-addon" id="anoCicloAddon"><i class="fa fa-search"></i></span>
+					  	<select class="form-control" id="basic-url" aria-describedby="anoCicloAddon" ng-model="ct.anoSelecionado" ng-options="a for a in ct.anos">
+					  		<option value="">(Escolha o ano)</option>
+					  	</select>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<a ui-sref="modulos" class="link-voltar">
+		<i class="fa fa-arrow-circle-left"></i>
+		Voltar
+	</a>
+
+</div>
+
+
+<div ng-include="'components/orcamento/ciclos/modalNovoCiclo.html'"></div>
+

@@ -1,0 +1,57 @@
+<table class="table table-sm">
+    <thead>
+        <tr>
+            <th style="border-bottom: 0;"></th>
+            <th style="border-bottom: 0;"></th>
+            <th style="border-bottom: 0;"></th>
+            <th colspan="2" class="text-center" style="border-bottom: 0;">1ª Parcela</th>
+            <th colspan="2" class="text-center" style="border-bottom: 0;">2ª Parcela</th>
+            <th colspan="2" class="text-center" style="border-bottom: 0;">3ª Parcela</th>
+        </tr>
+        <tr>
+            <th style="border-top: 0;" width="8%">Matrícula</th>
+            <th style="border-top: 0;" width="20%">Nome</th>
+            <th style="border-top: 0;" width="18%">Cargo</th>
+            <th style="border-top: 0;" width="9%">Mês</th>
+            <th style="border-top: 0;" width="9%">Qtda. Dias</th>
+            <th style="border-top: 0;" width="9%">Mês</th>
+            <th style="border-top: 0;" width="9%">Qtda. Dias</th>
+            <th style="border-top: 0;" width="9%">Mês</th>
+            <th style="border-top: 0;" width="9%">Qtda. Dias</th>
+        </tr>
+    </thead>
+    <tbody>
+        <form name="formPessoal">
+            <tr ng-repeat="f in ct.funcionarios">
+                <td>{{f.Matricula}}</td>
+                <td><p>{{f.Nome}}</p></td>
+                <td><p class="ellipsis">{{f.CargoNome}}</p></td>
+                <td>
+                    <select class="form-control" ng-model="f.Ferias.Parcela1.Mes" ng-options="(m | date:'MMM/yy') for m in ct.meses">
+                        <option value="">(N/A)</option>
+                    </select>
+                </td>
+                <td ng-class="{'has-error': !f.Ferias.Parcela1.QtdaDias && f.Ferias.Parcela1.Mes}">
+                    <input type="number" ng-disabled="!f.Ferias.Parcela1.Mes" class="form-control" ng-model="f.Ferias.Parcela1.QtdaDias">
+                </td>
+                <td>
+                    <select class="form-control" ng-model="f.Ferias.Parcela2.Mes" ng-options="(m | date:'MMM/yy') for m in ct.meses">
+                        <option value="">(N/A)</option>
+                    </select>
+                </td>
+                <td ng-class="{'has-error': !f.Ferias.Parcela2.QtdaDias && f.Ferias.Parcela2.Mes}">
+                    <input type="number" ng-disabled="!f.Ferias.Parcela2.Mes" class="form-control" ng-model="f.Ferias.Parcela2.QtdaDias">
+                </td>
+                <td>
+                    <select class="form-control" ng-model="f.Ferias.Parcela3.Mes" ng-options="(m | date:'MMM/yy') for m in ct.meses">
+                        <option value="">(N/A)</option>
+                    </select>
+                </td>
+                <td ng-class="{'has-error': !f.Ferias.Parcela3.QtdaDias && f.Ferias.Parcela3.Mes}">
+                    <input type="number" ng-disabled="!f.Ferias.Parcela3.Mes" class="form-control" ng-model="f.Ferias.Parcela3.QtdaDias">
+                </td>
+            </tr>
+
+        </form>
+    </tbody>
+</table>
