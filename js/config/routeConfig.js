@@ -5,6 +5,11 @@ angular.module('orcamentoApp').config(['$stateProvider', '$urlRouterProvider', '
 
     $stateProvider
 
+    .state('login', {
+        url: '/login',
+        templateUrl: 'components/login/login.html'
+    })
+
     .state('modulos', {
     	url: '/modulos',
     	templateUrl: 'components/modulos/modulos.html'
@@ -59,28 +64,88 @@ angular.module('orcamentoApp').config(['$stateProvider', '$urlRouterProvider', '
         controller: 'subModulosPthCtrl as ct'
     })
 
+    .state('pthOrcadoCiclos', {
+        url: '/pth/orcado/ciclos',
+        templateUrl: 'components/pth/orcado/ciclosOrcamento/ciclosOrcamento.html',
+        controller: 'orcamentoCiclosCtrl as ct'
+    })
+
+    .state('pthOrcadoDashboard', {
+        url: '/pth/orcado/dashboard',
+        templateUrl: 'components/pth/orcado/dashboard/dashboard.html',
+        controller: 'pthOrcadoDashboardCtrl as ct'
+    })
+
+    .state('pthOrcadoBase', {
+        url: '/pth/orcado/base',
+        templateUrl: 'components/pth/orcado/base/base.html',
+        controller: 'pthOrcadoBaseCtrl as ct'
+    })
+
     .state('pthOrcadoAprovacoes', {
-        url: '/pth/Orcado/Aprovacoes',
-        templateUrl: 'components/pth/orcado/aprovacoes.html',
-        controller: 'filaSolicitacoesAprovacoesOrcadoCtrl as ct'
+        url: '/pth/orcado/aprovacoes',
+        templateUrl: 'components/pth/orcado/aprovacoes/aprovacoes.html',
+        controller: 'pthOrcadoAprovacoesCtrl as ct'
     })
 
     .state('pthOrcadoContratacoes', {
-        url: '/pth/Orcado/Contratacoes',
-        templateUrl: 'components/pth/orcado/contratacoes.html',
-        controller: 'filaSolicitacoesContratacoesOrcadoCtrl as ct'
+        url: '/pth/orcado/contratacoes',
+        templateUrl: 'components/pth/orcado/contratacoes/contratacoes.html',
+        controller: 'pthOrcadoContratacoesCtrl as ct'
     })
 
     .state('pthOrcadoReajustes', {
-        url: '/pth/Orcado/Reajustes',
-        templateUrl: 'components/pth/orcado/reajustes.html',
-        controller: 'filaSolicitacoesReajustesOrcadoCtrl as ct'
+        url: '/pth/orcado/reajustes',
+        templateUrl: 'components/pth/orcado/reajustes/reajustes.html',
+        controller: 'pthOrcadoReajustesCtrl as ct'
     })
 
     .state('pthOrcadoDesligamentos', {
-        url: '/pth/Orcado/Desligamentos',
-        templateUrl: 'components/pth/orcado/desligamentos.html',
-        controller: 'filaSolicitacoesDesligamentosOrcadoCtrl as ct'
+        url: '/pth/orcado/desligamentos',
+        templateUrl: 'components/pth/orcado/desligamentos/desligamentos.html',
+        controller: 'pthOrcadoDesligamentosCtrl as ct'
+    })
+
+    .state('pthRealDashboard', {
+        url: '/pth/real/dashboard',
+        templateUrl: 'components/pth/real/dashboard/dashboard.html',
+        controller: 'pthRealDashboardCtrl as ct'
+    })
+
+    .state('pthRealEventos', {
+        url: '/pth/real/eventosFolha',
+        templateUrl: 'components/pth/real/eventos/eventos.html',
+        controller: 'pthRealEventosCtrl as ct'
+    })
+
+    .state('pthRealBase', {
+        url: '/pth/real/base',
+        templateUrl: 'components/pth/real/base/base.html',
+        controller: 'pthRealBaseCtrl as ct'
+    })
+
+    .state('pthRealAprovacoes', {
+        url: '/pth/real/aprovacoes',
+        templateUrl: 'components/pth/real/aprovacoes/aprovacoes.html',
+        controller: 'pthRealAprovacoesCtrl as ct'
+    })
+
+    .state('pthRealContratacoes', {
+        url: '/pth/real/contratacoes',
+        templateUrl: 'components/pth/real/contratacoes/contratacoes.html',
+        controller: 'pthRealContratacoesCtrl as ct'
+    })
+
+    .state('pthRealReajustes', {
+        url: '/pth/real/reajustes',
+        templateUrl: 'components/pth/real/reajustes/reajustes.html',
+        controller: 'pthRealReajustesCtrl as ct'
+    })
+
+    .state('pthRealDesligamentos', {
+        url: '/pth/real/desligamentos',
+        templateUrl: 'components/pth/real/desligamentos/desligamentos.html',
+        controller: 'pthRealDesligamentosCtrl as ct'
     })
 
     .state('premissasEncargos', {
@@ -126,15 +191,6 @@ angular.module('orcamentoApp').config(['$stateProvider', '$urlRouterProvider', '
         controller: 'usuariosCtrl as ct'
     })
 
-    .state('pthBase', {
-        url: '/pthBase',
-        templateUrl: 'components/pth/base/base.html'
-    })
-
-    .state('pthContratacoes', {
-        url: '/pthContratacoes',
-        templateUrl: 'components/pth/contratacoes/contratacoes.html'
-    })
     
     .state('orcamentoSimulacoes', {
         url: '/orcamento/simulacoes',

@@ -1,0 +1,52 @@
+<div ng-include="'templates/menu.html'"></div>
+
+<div class="content-view-menu">
+
+    <h2 class="title">Contratações Aprovadas</h2>
+
+    <div class="panel-collapse">
+		<a href class="title" data-target="#viewContratacoes">Contratações <i class="fa fa-angle-down pull-right"></i></a>
+		<div id="viewContratacoes" class="collapse show panel-collapsible">
+			
+			<div class="content">
+
+				<table class="table table-sm">
+					<thead>
+						<tr>
+							<th>Codigo do CR</th>
+							<th>Cargo</th>
+							<th>C.H.</th>
+							<th>Data Contratação</th>
+							<!-- <th>Data Solicitação</th> -->
+							<th>Qtda</th>
+							<th>Salario</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr ng-repeat="s in ct.contratacoes">
+							<td>{{s.CodigoCR}}</td>
+							<td>{{s.CargoNome}}</td>
+							<td>{{s.CargaHoraria}} h</td>
+							<td>{{s.DataContratacao | date:'dd/MM/yyyy'}}</td>
+							<!-- <td>{{s.HorarioSolicitacao | date:'dd/MM HH:mm'}}</td> -->
+							<td>{{s.Qtda}}</td>
+							<td>R$ {{s.Salario | number:2}}</td>
+						</tr>
+					</tbody>
+				</table>
+
+
+			</div>
+
+
+		</div>
+	</div>
+
+</div>
+
+
+<a ui-sref="pthSubModulos" class="link-voltar">
+    <i class="fa fa-arrow-circle-left"></i>
+    Voltar
+</a>

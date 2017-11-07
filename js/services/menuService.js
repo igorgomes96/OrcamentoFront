@@ -33,9 +33,19 @@ angular.module('orcamentoApp').service('menuService', [function() {
 	self.pthOrcado = {
 		menu: [
 			{
+				icon: 'fa-line-chart',
+				text: 'Dashboard',
+				state: 'pthOrcadoDashboard'
+			},
+			{
 				icon: 'fa-check',
 				text: 'Aprovações',
 				state: 'pthOrcadoAprovacoes'
+			},
+			{
+				icon: 'fa-users',
+				text: 'Base',
+				state: 'pthOrcadoBase'
 			},
 			{
 				icon: 'fa-user-plus',
@@ -51,6 +61,48 @@ angular.module('orcamentoApp').service('menuService', [function() {
 				icon: 'fa-level-up',
 				text: 'Promoções',
 				state: 'pthOrcadoReajustes'
+			}
+		],
+		activeByText: activeByTextFunc
+	};
+
+
+	self.pthReal = {
+		menu: [
+			{
+				icon: 'fa-line-chart',
+				text: 'Dashboard',
+				state: 'pthRealDashboard'
+			},
+			{
+				icon: 'fa-upload',
+				text: 'Eventos de Folha',
+				state: 'pthRealEventos'
+			},
+			{
+				icon: 'fa-check',
+				text: 'Aprovações',
+				state: 'pthRealAprovacoes'
+			},
+			{
+				icon: 'fa-users',
+				text: 'Base',
+				state: 'pthRealBase'
+			},
+			{
+				icon: 'fa-user-plus',
+				text: 'Contratações',
+				state: 'pthRealContratacoes'
+			},
+			{
+				icon: 'fa-user-times',
+				text: 'Desligamentos',
+				state: 'pthRealDesligamentos'
+			},
+			{
+				icon: 'fa-level-up',
+				text: 'Promoções',
+				state: 'pthRealReajustes'
 			}
 		],
 		activeByText: activeByTextFunc

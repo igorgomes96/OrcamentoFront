@@ -7,4 +7,10 @@ angular.module('orcamentoApp').service('funcionariosApi', ['dataService', '$q', 
 			resolve({data: dataService.getFuncionariosInfo(cr)});
 		});
 	}
+
+	self.getDesligamentos = function() {
+		return $q(function(resolve) {
+			resolve({data: dataService.getDesligamentos()});
+		});
+	}
 }]);

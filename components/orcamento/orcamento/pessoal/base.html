@@ -5,6 +5,10 @@
         </li>
 
         <li class="nav-item">
+            <a class="flex-sm-fill text-sm-center nav-link" ng-class="{'active': ct.aba == 'Desligamentos'}" ng-click="ct.aba = 'Desligamentos'" href>Desligamentos</a>
+        </li>
+
+        <li class="nav-item">
             <a class="flex-sm-fill text-sm-center nav-link" ng-class="{'active': ct.aba == 'Promoções'}" ng-click="ct.aba = 'Promoções'" href>Promoções</a>
         </li>
 
@@ -61,6 +65,9 @@
 <div class="content">
     <div ng-show="ct.aba == 'Dados'">
         <div ng-include="'components/orcamento/orcamento/pessoal/categoriasBase/dados.html'"></div>
+    </div>
+    <div ng-show="ct.aba == 'Desligamentos'">
+        <div ng-include="'components/orcamento/orcamento/pessoal/categoriasBase/desligamentos.html'"></div>
     </div>
     <div ng-show="ct.aba == 'Promoções'">
         <div ng-include="'components/orcamento/orcamento/pessoal/categoriasBase/promocoes.html'"></div>

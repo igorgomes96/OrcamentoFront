@@ -1,0 +1,49 @@
+<div class="content-view">
+		
+	<h2 class="title">Ciclos</h2>
+
+	<h5 class="title">Ciclos Abertos</h5>
+
+	<div class="row">
+		<div class="container-module-card col-lg-2 col-md-3 col-sm-4 col-xs-6" ng-repeat="c in ct.ciclos">
+			<div class="module-card">
+				<a ui-sref="pthOrcadoDashboard">
+					<i class="fa fa-calendar fa-3x"></i>
+					<h5>Ciclo {{c.Codigo}}</h5>
+					<small>{{c.DataInicio | date:'MMM/yy'}} - {{c.DataFim | date:'MMM/yy'}}</small>
+				</a>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="row">
+
+		<div class="col-md-12">
+
+
+			<h5 class="title">Ciclos Fechados</h5>
+
+			<div class="row">
+				<div class="col-lg-2 col-md-3 col-sm-4">
+					<label for="anoCiclo">Ano</label>
+					<div class="input-group input-group-sm">
+						<span class="input-group-addon" id="anoCicloAddon"><i class="fa fa-search"></i></span>
+					  	<select class="form-control" id="basic-url" aria-describedby="anoCicloAddon" ng-model="ct.anoSelecionado" ng-options="a for a in ct.anos">
+					  		<option value="">(Escolha o ano)</option>
+					  	</select>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</div>
+
+<a ui-sref="pthSubModulos" class="link-voltar">
+	<i class="fa fa-arrow-circle-left"></i>
+	Voltar
+</a>
+
+

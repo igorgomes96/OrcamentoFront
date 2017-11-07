@@ -132,7 +132,11 @@ angular.module('orcamentoApp').service('dataService', [function() {
 			Salario: 6000,
 			Qtda: 2,
 			DataContratacao: new Date(2018, 7, 15),
-			Descricao: 'Solicitação de Contratação de 2 Cargo Exemplo 1111 para Uberlândia.'
+			Descricao: 'Solicitação de Contratação de 2 Cargo Exemplo 1111 para Uberlândia.',
+			Orcado: false,
+			ConfirmarOrcamento: undefined,
+			Aprovado: null,
+			MotivoReprovacao: null
 		},
 		{
 			Codigo: 2,
@@ -145,26 +149,40 @@ angular.module('orcamentoApp').service('dataService', [function() {
 			Salario: 7000,
 			Qtda: 6,
 			DataContratacao: new Date(2018, 7, 15),
-			Descricao: 'Solicitação de Contratação de 6 Cargo Exemplo 2222 para Uberaba.'
+			Descricao: 'Solicitação de Contratação de 6 Cargo Exemplo 2222 para Uberaba.',
+			Orcado: false,
+			ConfirmarOrcamento: undefined,
+			Aprovado: null,
+			MotivoReprovacao: null
 		}
 	];
 
-	var pthOrcadoDesligamentos = [
+	var pthRealSolicitacoesPromocoes = [
 		{
-			Codigo: 2,
-			CodigoCR: 11111,
-			Solicitante: 'Nome do Solicitante',
-			HorarioSolicitacao: new Date(),
 			Matricula: '1111',
 			Nome: 'Funcionario 1111',
 			CargoNome: 'Cargo Exemplo 1111',
+			CargaHoraria: 220,
 			Salario: 1111,
 			DataAdmissao: new Date(2011, 01, 01),
-			DataDesligamento: new Date(2018, 10, 4),
-			Cidade: 'Uberlândia',
-			Descricao: 'Solicito desligamento do funcionário 1111 por motivo de baixo desempenho.'
+			Situacao: 'Funcionário Ativo',
+			CodigoCR: 11111,
+			HorasExtras: angular.copy(horasExtras),
+			HorasNoturnas: angular.copy(horasNoturnas),
+			Ferias: angular.copy(ferias),
+			EventosFolha: angular.copy(eventosFolha),
+			DataInicioCR: new Date(2018, 0, 1),
+			DataFimCR: null,
+			MesDesligamento: null,
+			Promocao: {
+				MesPromocao: new Date(2018, 3, 1),
+				CargoNomePromocao: 'Cargo Exemplo 6666',
+				SalarioPromocao: 4000,
+				Aprovado: undefined
+			}
 		}
 	];
+
 
 	var inputsFolha = [
 		{
@@ -454,6 +472,7 @@ angular.module('orcamentoApp').service('dataService', [function() {
 			Matricula: '1111',
 			Nome: 'Funcionario 1111',
 			CargoNome: 'Cargo Exemplo 1111',
+			CargaHoraria: 220,
 			Salario: 1111,
 			DataAdmissao: new Date(2011, 01, 01),
 			Situacao: 'Funcionário Ativo',
@@ -463,12 +482,14 @@ angular.module('orcamentoApp').service('dataService', [function() {
 			Ferias: angular.copy(ferias),
 			EventosFolha: angular.copy(eventosFolha),
 			DataInicioCR: new Date(2018, 0, 1),
-			DataFimCR: null
+			DataFimCR: null,
+			MesDesligamento: null
 		},
 		{
 			Matricula: '2222',
 			Nome: 'Funcionario 2222',
 			CargoNome: 'Cargo Exemplo 2222',
+			CargaHoraria: 220,
 			Salario: 2222,
 			DataAdmissao: new Date(2012, 02, 02),
 			Situacao: 'Funcionário Ativo',
@@ -481,15 +502,17 @@ angular.module('orcamentoApp').service('dataService', [function() {
 				MesPromocao: new Date(2018, 5, 1),
 				CargoNomePromocao: 'Cargo Exemplo 5555',
 				SalarioPromocao: 2323,
-				Aprovado: false
+				Aprovado: undefined
 			},
 			DataInicioCR: new Date(2018, 0, 1),
-			DataFimCR: null
+			DataFimCR: null,
+			MesDesligamento: null
 		},
 		{
 			Matricula: '3333',
 			Nome: 'Funcionario 3333',
 			CargoNome: 'Cargo Exemplo 3333',
+			CargaHoraria: 220,
 			Salario: 3333,
 			DataAdmissao: new Date(2013, 03, 03),
 			Situacao: 'Funcionário Afastado',
@@ -499,14 +522,16 @@ angular.module('orcamentoApp').service('dataService', [function() {
 			Ferias: angular.copy(ferias),
 			EventosFolha: angular.copy(eventosFolha),
 			DataInicioCR: new Date(2018, 0, 1),
-			DataFimCR: null
+			DataFimCR: null,
+			MesDesligamento: null
 		},
 		{
 			Matricula: '4444',
 			Nome: 'Funcionario 4444',
 			CargoNome: 'Cargo Exemplo 4444',
+			CargaHoraria: 220,
 			Salario: 4444,
-			DataAdmissao: new Date(2044, 04, 04),
+			DataAdmissao: new Date(2004, 04, 04),
 			Situacao: 'Funcionário Ativo',
 			CodigoCR: 22222,
 			HorasExtras: angular.copy(horasExtras),
@@ -514,9 +539,11 @@ angular.module('orcamentoApp').service('dataService', [function() {
 			Ferias: angular.copy(ferias),
 			EventosFolha: angular.copy(eventosFolha),
 			DataInicioCR: new Date(2018, 0, 1),
-			DataFimCR: null
+			DataFimCR: null,
+			MesDesligamento: null
 		}
 	];
+
 
 	var contratacoes = [
 		{
@@ -529,7 +556,7 @@ angular.module('orcamentoApp').service('dataService', [function() {
 			QtdaMensal: angular.copy(qtdaMensalContratacao),
 			CodigoCR: 11111,
 			NomeUsuario: 'Gestor 1',
-			Aprovado: false,
+			Aprovado: undefined,
 			DataContratacao: new Date(2018, 0, 1),
 			Qtda: 2
 		},
@@ -543,7 +570,7 @@ angular.module('orcamentoApp').service('dataService', [function() {
 			QtdaMensal: angular.copy(qtdaMensalContratacao),
 			CodigoCR: 11111,
 			NomeUsuario: 'Gestor 1',
-			Aprovado: false,
+			Aprovado: undefined,
 			DataContratacao: new Date(2018, 0, 1),
 			Qtda: 2
 		},
@@ -557,7 +584,7 @@ angular.module('orcamentoApp').service('dataService', [function() {
 			QtdaMensal: angular.copy(qtdaMensalContratacao),
 			CodigoCR: 22222,
 			NomeUsuario: 'Gestor 1',
-			Aprovado: false,
+			Aprovado: undefined,
 			DataContratacao: new Date(2018, 0, 1),
 			Qtda: 2
 		}
@@ -581,6 +608,29 @@ angular.module('orcamentoApp').service('dataService', [function() {
 	crsUser.forEach(function(x) {
 		x.InputsFolha = angular.copy(inputsFolha);
 	});
+
+	self.aprovarContratacaoOrcamento = function(contratacao) {
+		contratacao.Aprovado = true;
+		pthRealSolicitacoesContratacoes.push({
+			Codigo: pthRealSolicitacoesContratacoes.length + 1,
+			CodigoCR: contratacao.CodigoCR,
+			Solicitante: 'Nome do Solicitante',
+			HorarioSolicitacao: new Date(),
+			Cidade: contratacao.Cidade,
+			CargoNome: contratacao.CargoNome,
+			CargaHoraria: contratacao.CargaHoraria,
+			Salario: contratacao.Salario,
+			Qtda: contratacao.Qtda,
+			DataContratacao: contratacao.DataContratacao,
+			Descricao: '(Solicitado no Orçamento)',
+			Orcado: true,
+			ConfirmarOrcamento: false,
+			Aprovado: null,
+			MotivoReprovacao: null
+		});
+
+		console.log(contratacoes);
+	}
 
 	self.postTransferencia = function(transf) {
 		var data = transf.DataInicioCR;
@@ -610,6 +660,10 @@ angular.module('orcamentoApp').service('dataService', [function() {
 
 		console.log(transferencias);
 		console.log(funcionarios);
+	}
+
+	self.getDesligamentos = function() {
+		return funcionarios.filter(x => x.MesDesligamento);
 	}
 
 	self.getCargosSalarios = function() {
@@ -646,21 +700,22 @@ angular.module('orcamentoApp').service('dataService', [function() {
 		return usuarios;
 	}
 
-	self.getPthOrcadoSolicitacoesContratacoes = function() {
-		return contratacoes.filter(x => !x.Aprovado);
+	self.getPthOrcadoSolicitacoesContratacoes = function(aprovado) {
+		return contratacoes.filter(x => x.Aprovado === aprovado);
 	}
 
-	self.getPthOrcadoSolicitacoesReajustes = function() {
-		return funcionarios.filter(x => x.Promocao && !x.Promocao.Aprovado);
+	self.getPthOrcadoSolicitacoesReajustes = function(aprovado) {
+		return funcionarios.filter(x => (x.Promocao && x.Promocao.Aprovado === aprovado));
 	}
 
-	self.getPthOrcadoDesligamentos = function() {
-		return pthOrcadoDesligamentos;
+	self.aprovarReajusteOrcamento = function(funcionario) {
+		funcionario.Promocao.Aprovado = true;
+		pthRealSolicitacoesPromocoes.push(funcionario);
 	}
 
 	self.getFuncionariosInfo = function(cr) {
 		return funcionarios.filter(function(x) {
-			return x.CodigoCR == cr;
+			return !cr || x.CodigoCR == cr;
 		});
 	}
 

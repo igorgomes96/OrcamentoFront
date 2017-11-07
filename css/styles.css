@@ -19,11 +19,19 @@ body {
 nav.navbar {
 	background-color: var(--main-bg-color-gray);
 	border-bottom: solid 1px var(--main-bd-color-gray);
-	z-index: 1;
+	z-index: 10;
 	position: fixed;
 	width: 100%;
     top: 0;
+    display: inline-block;
 } 
+
+nav.navbar div.user {
+	display: inline-block;
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+}
 
 a.link-voltar {
 	position: fixed;
@@ -115,4 +123,9 @@ div.panel-menu {
 
 .table td .input-group {
 	height: 1.7rem;
+}
+
+.table td .input-group .input-group-addon {
+	padding: .375rem .4rem;
+	font-size: .9rem;
 }

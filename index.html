@@ -18,16 +18,20 @@
 	<link rel="stylesheet" href="css/custom-bootstrap.css">
 	<link rel="stylesheet" href="css/menu.css">
 	<link rel="stylesheet" href="css/dashboard.css">
+	<link rel="stylesheet" href="css/login.css">
 
 
 
 </head>
 <body ng-app="orcamentoApp">
 	
-	<nav class="navbar navbar-light">
+	<nav class="navbar navbar-light" style="min-height: 65px;">
 		<a class="navbar-brand" href="#">
 			<img src="img/money-icon.png" style="height: 40px;">
 			Orion
+			<div class="user">
+				<i class="fa fa-user-circle-o"></i>
+			</div>
 		</a>
 	</nav>
 
@@ -65,10 +69,19 @@
 	<script src="components/orcamento/orcamento/pessoal/orcamentoTransfRecebidasCtrl.js"></script>
 	<script src="components/orcamento/orcamento/pessoal/orcamentoValoresAbertosCtrl.js"></script>
 	<script src="components/pth/subModulos/subModulosPthCtrl.js"></script>
-	<script src="components/pth/orcado/filaSolicitacoesContratacoesOrcadoCtrl.js"></script>
-	<script src="components/pth/orcado/filaSolicitacoesDesligamentosOrcadoCtrl.js"></script>
-	<script src="components/pth/orcado/filaSolicitacoesReajustesOrcadoCtrl.js"></script>
-	<script src="components/pth/orcado/filaSolicitacoesAprovacoesOrcadoCtrl.js"></script>
+	<script src="components/pth/orcado/aprovacoes/pthOrcadoAprovacoesCtrl.js"></script>
+	<script src="components/pth/orcado/contratacoes/pthOrcadoContratacoesCtrl.js"></script>
+	<script src="components/pth/orcado/dashboard/pthOrcadoDashboardCtrl.js"></script>
+	<script src="components/pth/orcado/desligamentos/pthOrcadoDesligamentosCtrl.js"></script>
+	<script src="components/pth/orcado/reajustes/pthOrcadoReajustesCtrl.js"></script>
+	<script src="components/pth/orcado/base/pthOrcadoBaseCtrl.js"></script>
+	<script src="components/pth/real/aprovacoes/pthRealAprovacoesCtrl.js"></script>
+	<script src="components/pth/real/eventos/pthRealEventosCtrl.js"></script>
+	<script src="components/pth/real/contratacoes/pthRealContratacoesCtrl.js"></script>
+	<script src="components/pth/real/dashboard/pthRealDashboardCtrl.js"></script>
+	<script src="components/pth/real/desligamentos/pthRealDesligamentosCtrl.js"></script>
+	<script src="components/pth/real/reajustes/pthRealReajustesCtrl.js"></script>
+	<script src="components/pth/real/base/pthRealBaseCtrl.js"></script>
 	<script src="components/usuarios/usuariosCtrl.js"></script>
 	<script src="components/premissas/acordos/premissasAcordosCtrl.js"></script>
 	<script src="components/premissas/beneficios/premissasBeneficiosCtrl.js"></script>

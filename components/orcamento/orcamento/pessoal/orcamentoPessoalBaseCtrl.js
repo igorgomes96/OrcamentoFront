@@ -4,9 +4,17 @@ angular.module('orcamentoApp').controller('orcamentoPessoalBaseCtrl', ['funciona
 
 	self.aba = 'Dados';
 	self.funcionarios = [];
+	self.desligamentos = [];
 	self.meses = dataService.getMeses();
 	self.cargos = [];
 	self.filiais = [];
+
+	var loadDesligamentos = function() {
+		funcionariosApi.getDesligamentos()
+		.then(function(dado) {
+			self.desligamentos = dado.data;
+		});
+	}
 
 	self.loadFuncionariosInfo = function(cr) {
 		funcionariosApi.getFuncionariosInfo(cr)
@@ -42,4 +50,5 @@ angular.module('orcamentoApp').controller('orcamentoPessoalBaseCtrl', ['funciona
 	});
 	
 	loadCargos();
+	loadDesligamentos();
 }]);

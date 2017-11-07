@@ -1,15 +1,6 @@
 <div class="content">
 
-	<div class="row">
-		<div class="col-md-12">
-			<div style="text-align: right;">
-				<button class="btn btn-sm btn-success">Aprovar Todas <i class="fa fa-thumbs-up"></i></button>
-				<button class="btn btn-sm btn-danger">Reprovar Todas <i class="fa fa-thumbs-down"></i></button>
-			</div>
-		</div>
-	</div>
-
-	<table class="table table-sm" style="margin-top: 10px;">
+	<table class="table table-sm">
 		<thead>
 			<tr>
 				<th>Codigo do CR</th>
@@ -36,7 +27,7 @@
 				<td>R$ {{s.Promocao.SalarioPromocao | number:2}}</td>
 				<td>
 					<button class="btn btn-xs btn-danger pull-right"><i class="fa fa-thumbs-down"></i></button>
-					<button class="btn btn-xs btn-success pull-right" ng-click="ct.aprovarReajuste(s)"><i class="fa fa-thumbs-up"></i></button>
+					<button class="btn btn-xs btn-success pull-right" ng-click="ct.aprovar(s)"><i class="fa fa-thumbs-up"></i></button>
 					<button class="btn btn-xs btn-info pull-right" data-toggle="modal" data-target="#modal-info-reajuste" ng-click="ct.reajusteSelecionado = s"><i class="fa fa-info"></i></button>
 				</td>
 			</tr>

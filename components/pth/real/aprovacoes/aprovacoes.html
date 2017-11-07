@@ -1,0 +1,25 @@
+<div ng-include="'templates/menu.html'"></div>
+
+
+<div class="content-view-menu">
+
+    <h2 class="title">Aprovações de Solicitações</h2>
+
+    <div class="panel-collapse">
+		<a href class="title" data-target="#viewContratacoes">Contratações <i class="fa fa-angle-down pull-right"></i></a>
+		<div ng-include="'components/pth/real/tiposSolicitacoes/contratacoes.html'" id="viewContratacoes" class="collapse show panel-collapsible"></div>
+	</div>
+
+	<div class="panel-collapse">
+		<a href class="title" data-target="#viewReajustes">Reajustes Por Mérito <i class="fa fa-angle-down pull-right"></i></a>
+		<div ng-include="'components/pth/real/tiposSolicitacoes/reajustes.html'" id="viewReajustes" class="collapse show panel-collapsible"></div>
+	</div>
+
+	
+</div>
+
+
+<a ui-sref="pthSubModulos" class="link-voltar">
+	<i class="fa fa-arrow-circle-left"></i>
+	Voltar
+</a>
