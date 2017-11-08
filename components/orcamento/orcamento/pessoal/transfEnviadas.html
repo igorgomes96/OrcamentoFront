@@ -11,7 +11,7 @@
                     <th>CR de Destino</th>
                     <th>Data de Solicitação</th>
                     <th>Mês de Transf.</th>
-                    <th>Status</th>
+                    <th width="5%"></th>
                 </tr>
             </thead>
             <tbody>
@@ -25,7 +25,14 @@
                     <td>{{t.CRDestino}}</td>
                     <td>{{t.DataSolicitacao | date:'dd-MM-yyyy'}}</td>
                     <td>{{t.MesTransferencia | date:'MMM/yy'}}</td>
-                    <td>{{t.Status}}</td>
+                    <td>
+                        <div class="pull-right">
+                            <i class="fa fa-thumbs-up" ng-show="t.Aprovado" style="color: green;"></i>
+                            <i class="fa fa-thumbs-down" ng-show="t.Aprovado === false" style="color: red;"></i>
+                            <i class="fa fa-hourglass-half" ng-show="t.Aprovado === undefined"></i>
+                            <!-- - {{t.Status}} -->
+                        </div>
+                    </td>
                 </tr>
 
             </tbody>

@@ -20,13 +20,18 @@ angular.module('orcamentoApp').controller('orcamentoPessoalBaseCtrl', ['funciona
 		funcionariosApi.getFuncionariosInfo(cr)
 		.then(function(dado) {
 			self.funcionarios = dado.data;
+			console.log(self.funcionarios);
 		});
 	}
 
 	self.saveTransferencia = function(funcionario, transf) {
+		funcionariosApi.getFuncionario(funcionario.Matricula)
 		funcionario.CodigoCR = transf.CRDestino;
 		funcionario.DataInicioCR = transf.MesTransferencia;
-		transferenciasApi.postTransferencia(funcionario);
+		transferenciasApi.postTransferencia(funcionario)
+		.then(function() {
+			self.loadFuncionariosInfo(self.crAtual);
+		});
 	}
 
 	var loadCargos = function() {

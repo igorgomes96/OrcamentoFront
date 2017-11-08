@@ -4,10 +4,53 @@
 
     <h2 class="title">Base</h2>
 
+    <div class="panel-collapse">
+		<a href class="title" data-target="#viewBase">Base Geral <i class="fa fa-angle-down pull-right"></i></a>
+		<div id="viewBase" class="collapse show panel-collapsible">
+			
+			<div class="content">
+
+				<table class="table table-sm">
+					<thead>
+						<tr>
+							<th>Codigo do CR</th>
+							<th>Matrícula</th>
+							<th>Nome</th>
+							<th>Cargo</th>
+							<th>C.H.</th>
+							<th>Data Contratação</th>
+							<th>Mês Desligamento</th>
+							<th>Salario</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr ng-repeat="b in ct.base">
+							<td>{{b.CodigoCR}}</td>
+							<td>{{b.Matricula}}</td>
+							<td>{{b.Nome}}</td>
+							<td>{{b.CargoNome}}</td>
+							<td>{{b.CargaHoraria}} h</td>
+							<td>{{b.DataAdmissao | date:'dd/MM/yyyy'}}</td>
+							<!-- <td>{{b.HorarioSolicitacao | date:'dd/MM HH:mm'}}</td> -->
+							<td>{{b.MesDesligamento | date:'MMM/yy'}}</td>
+							<td>R$ {{b.Salario | number:2}}</td>
+						</tr>
+					</tbody>
+				</table>
+
+
+			</div>
+
+
+		</div>
+	</div>
+
+
 </div>
 
 
-<a ui-sref="modulos" class="link-voltar">
+<a ui-sref="pthSubModulos" class="link-voltar">
     <i class="fa fa-arrow-circle-left"></i>
     Voltar
 </a>

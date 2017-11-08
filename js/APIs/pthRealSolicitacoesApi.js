@@ -14,6 +14,24 @@ angular.module('orcamentoApp').service('pthRealSolicitacoesApi', ['dataService',
 		});
 	}
 
+	self.getQtdaSolicitacoesGestorReal = function() {
+		return $q(function(resolve) {
+			resolve({data: dataService.getQtdaSolicitacoesGestorReal()});
+		});
+	}
+
+	self.postPthRealSolicitacoesContratacoes = function(contratacao) {
+		return $q(function(resolve) {
+			resolve({data: dataService.postPthRealSolicitacoesContratacoes(contratacao)});
+		});
+	}
+
+	self.postPthRealSolicitacoesPromocoes = function(promocao) {
+		return $q(function(resolve) {
+			resolve({data: dataService.postPthRealSolicitacoesPromocoes(promocao)});
+		});
+	}
+
 	self.postAprovarContratacaoReal = function(contratacao) {
 		return $q(function(resolve) {
 			resolve({data: dataService.aprovarContratacaoReal(contratacao)});
@@ -25,5 +43,6 @@ angular.module('orcamentoApp').service('pthRealSolicitacoesApi', ['dataService',
 			resolve({data: dataService.aprovarReajusteReal(reajuste)});
 		});
 	}
+	
 
 }]);

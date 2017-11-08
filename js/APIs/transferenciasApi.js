@@ -20,5 +20,17 @@ angular.module('orcamentoApp').service('transferenciasApi', ['dataService', '$q'
 		});
 	}
 
+	self.aprovarTransferencia = function(transf) {
+		return $q(function(resolve) {
+			resolve({data: dataService.aprovarTransferencia(transf)});
+		});
+	}
+
+	self.reprovarTransferencia = function(transf) {
+		return $q(function(resolve) {
+			resolve({data: dataService.reprovarTransferencia(transf)});
+		});
+	}
+
 
 }]);

@@ -4,6 +4,95 @@
 
     <h2 class="title">Eventos de Folha</h2>
 
+    <div class="row">
+    	<div class="col-md-12">
+    		<button class="btn btn-primary btn-sm">Importar Base <i class="fa fa-upload"></i></button>
+    	</div>
+    </div>
+
+    <hr>
+
+
+    <div class="panel-collapse">
+		<a href class="title" data-target="#viewCadastroEventos">Cadastro de Eventos de Folha <i class="fa fa-angle-down pull-right"></i></a>
+		<div id="viewCadastroEventos" class="collapse show panel-collapsible">
+
+			<div class="content">
+
+
+				<div class="row">
+			    	<div class="col-md-12">
+			    		<form name="formEventos" novalidate>
+			    			<div class="form-row">
+				    			<div class="form-group col-md-3">
+						    		<label for="inputMes">Mês Realizado</label>
+						    		<input type="date" name="inputMes" class="form-control" placeholder="Digite a data" required>
+					    		</div>
+					    	</div>
+
+				    		<div class="form-row">
+
+					    		<div class="form-group col-md-3">
+						    		<label for="inputMatricula">Matrícula</label>
+						    		<input type="text" name="inputMatricula" class="form-control" placeholder="Digite a matrícula do funcionário" required>
+					    		</div>
+
+					    		<div class="form-group col-md-6">
+						    		<label for="inputEvento">Evento</label>
+						    		<input type="text" name="inputEvento" class="form-control" placeholder="Digite o nome do evento" required>
+					    		</div>
+
+					    		<div class="form-group col-md-3">
+						    		<label for="inputValor">Valor (R$)</label>
+						    		<input type="number" name="inputValor" class="form-control" placeholder="Digite o Valor" required>
+					    		</div>
+
+					    	</div>
+
+					    	<button class="btn btn-success btn-sm">Salvar <i class="fa fa-floppy-o"></i></button>
+			    		</form>
+			    	</div>
+			    </div>
+
+			</div>
+
+
+		</div>
+
+	</div>
+
+
+	<div class="panel-collapse">
+		<a href class="title" data-target="#viewEventos">Tabela de Eventos de Folha <i class="fa fa-angle-down pull-right"></i></a>
+		<div id="viewEventos" class="collapse show panel-collapsible">
+
+			<div class="content">
+
+				<form name="formFiltroEventos" novalidate>
+	    			<div class="form-row">
+		    			<div class="form-group col-md-3">
+				    		<label for="inputMesInicio">Mês Início</label>
+				    		<input type="date" name="inputMes" class="form-control" required>
+			    		</div>
+
+			    		<div class="form-group col-md-3">
+				    		<label for="inputMesFim">Mês Fim</label>
+				    		<input type="date" name="inputMes" class="form-control" required>
+			    		</div>
+			    	</div>
+
+			    	<button class="btn btn-primary btn-sm">Carregar <i class="fa fa-refresh"></i></button>
+			    	
+			    </form>
+
+
+			</div>
+		</div>
+	</div>
+
+    
+    
+
 </div>
 
 <a ui-sref="pthSubModulos" class="link-voltar">

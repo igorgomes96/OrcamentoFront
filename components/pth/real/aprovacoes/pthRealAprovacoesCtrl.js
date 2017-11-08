@@ -23,7 +23,7 @@ angular.module('orcamentoApp').controller('pthRealAprovacoesCtrl', ['menuService
 	}
 
 	self.aprovarContratacao = function(contratacao) {
-		pthRealSolicitacoesApi.postAprovarContratacaoOrcamento(contratacao)
+		pthRealSolicitacoesApi.postAprovarContratacaoReal(contratacao)
 		.then(function(dado) {
 			swal('Sucesso!', 'Solciitação aprovada com sucesso!', 'success');
 			loadSolicitacoesContratacoes();
@@ -31,7 +31,7 @@ angular.module('orcamentoApp').controller('pthRealAprovacoesCtrl', ['menuService
 	}
 
 	self.aprovarReajuste = function(reajuste) {
-		pthRealSolicitacoesApi.postAprovarReajusteOrcamento(reajuste)
+		pthRealSolicitacoesApi.postAprovarReajusteReal(reajuste)
 		.then(function(dado) {
 			swal('Sucesso!', 'Solciitação aprovada com sucesso!', 'success');
 			loadSolicitacoesReajustes();

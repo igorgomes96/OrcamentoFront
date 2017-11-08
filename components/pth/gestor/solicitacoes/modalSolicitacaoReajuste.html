@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Solicitação de Contratação</h5>
+                <h5 class="modal-title">Solicitação de Promoção</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -12,130 +12,140 @@
                 <div class="row">
                     <div class="col-sm-12">
 
+                    	<form name="formReajuste" novalidate>
 
-                    	<div class="row">
-					        <div class="col-md-4">
-					            <label for="inputMatriculaReajuste">Matrícula</label>
-					        </div>
-					    </div>
+	                    	<div class="row">
+						        <div class="col-md-4">
+						            <label for="inputMatriculaReajuste">Matrícula</label>
+						        </div>
+						    </div>
 
-					    <div class="row" style="margin-bottom: 13px;">
+						    <div class="row" style="margin-bottom: 13px;">
 
-					        <div class="col-md-4">
-					            <div class="input-group input-group-sm">
-					                <input id="inputMatriculaReajuste" type="text" class="form-control">
-					                <span class="input-group-btn">
-					                    <button class="btn btn-sm btn-primary" type="button"><i class="fa fa-search"></i></button>
-					                </span>
-					            </div>
-					        </div>
+						        <div class="col-md-4">
+						            <div class="input-group input-group-sm">
+						                <input id="inputMatriculaReajuste" type="text" class="form-control" ng-model="ct.matriculaBusca">
+						                <span class="input-group-btn">
+						                    <button class="btn btn-sm btn-primary" type="button" ng-click="ct.buscaFuncionario(ct.matriculaBusca)"><i class="fa fa-search"></i></button>
+						                </span>
+						            </div>
+						        </div>
 
-					        <div class="col-md-2">
-					            <div class="row">
-					                <div class="col-md-12">
-					                    <button class="btn btn-primary btn-sm">Listar todos <i class="fa fa-search-plus"></i></button>
-					                </div>
-					            </div>
-					        </div>
+						       <!--  <div class="col-md-2">
+						            <div class="row">
+						                <div class="col-md-12">
+						                    <button class="btn btn-primary btn-sm">Listar todos <i class="fa fa-search-plus"></i></button>
+						                </div>
+						            </div>
+						        </div> -->
 
-					    </div>
-
-
-					    <div class="row">
-
-					        <div class="col-md-12">
-					            <div class="form-group">
-					                <label for="inputNomeAssociadoReajuste">Nome do Associado</label>
-					                <input id="inputNomeAssociadoReajuste" type="text" class="form-control" disabled>
-					            </div>
-					        </div>
-					    
-					        <!-- <div class="col-md-2">
-					            <div class="form-group">
-					                <label for="input-ch-anterior">CH Anterior</label>
-					                <input id="input-ch-anterior" type="text" class="form-control" disabled ng-model="ctAlteracoes.funcionario.CargaHoraria">
-					            </div>
-					        </div> -->
-
-					    </div>
-
-					    <div class="row">
-					    	<div class="col-md-6">
-					            <div class="form-group">
-					                <label for="inputCargoAnteriorReajuste">Cargo Anterior</label>
-					                <input id="inputCargoAnteriorReajuste" type="text" class="form-control" disabled>
-					            </div>
-					        </div>
-
-					        <div class="col-md-6">
-					            <div class="form-group">
-					                <label for="selectNovoCargoReajuste">Novo Cargo</label>
-					                <select id="selectNovoCargoReajuste" class="form-control" required>
-					                    <option value=''></option>
-					                </select>
-					            </div>
-					        </div>
-					    </div>
-
-					    <div class="row">
-
-					        <!-- <div class="col-md-3">
-					            <div class="form-group">
-					                <label for="input-empresa">Empresa</label>
-					                <input id="input-empresa" type="text" class="form-control" disabled ng-model="ctAlteracoes.funcionario.EmpresaNome">
-					            </div>
-					        </div> -->
+						    </div>
 
 
-					        <div class="col-md-4">
-					            <div class="form-group">
-					                <label for="inputSalarioAnteriorReajuste">Salário Anterior</label>
-					                <input id="inputSalarioAnteriorReajuste" type="text" class="form-control" disabled>
-					            </div>
-					        </div>
+						    <div class="row">
 
-					        <div class="col-md-4">
-					            <div class="form-group">
-					                <label for="inputSalarioNovoReajuste">Novo Salário</label>
-					                <input id="inputSalarioNovoReajuste" type="text" class="form-control" required>
-					            </div>
-					        </div>
+						        <div class="col-md-8">
+						            <div class="form-group">
+						                <label for="inputNomeAssociadoReajuste">Nome do Associado</label>
+						                <input id="inputNomeAssociadoReajuste" type="text" class="form-control" disabled ng-model="ct.solicitacaoReajuste.Nome">
+						            </div>
+						        </div>
 
-					        <div class="col-md-4">
-					            <div class="row">
-					                <div class="col-md-12">
-					                    <label for="inputAlteracaoPercentualReajuste">Percentual de aumento</label>
-					                </div>
-					            </div>
+						        <div class="col-md-4">
+						            <div class="form-group">
+						                <label for="inputMesPromocao">Mês da Promoção</label>
+						                <input id="inputMesPromocao" type="date" class="form-control" required ng-model="ct.solicitacaoReajuste.Promocao.MesPromocao">
+						            </div>
+						        </div>
+						    
+						        <!-- <div class="col-md-2">
+						            <div class="form-group">
+						                <label for="input-ch-anterior">CH Anterior</label>
+						                <input id="input-ch-anterior" type="text" class="form-control" disabled ng-model="ctAlteracoes.funcionario.CargaHoraria">
+						            </div>
+						        </div> -->
 
-					            <div class="row">
+						    </div>
 
-					                <div class="col-md-12">
-					                    <div class="input-group input-group-sm">
-					                        <input id="inputAlteracaoPercentualReajuste" disabled type="text" class="form-control">
-					                        <span class="input-group-addon">%</span>
-					                    </div>
-					                </div>
+						    <div class="row">
+						    	<div class="col-md-6">
+						            <div class="form-group">
+						                <label for="inputCargoAnteriorReajuste">Cargo Atual</label>
+						                <input id="inputCargoAnteriorReajuste" type="text" class="form-control" disabled ng-model="ct.solicitacaoReajuste.CargoNome">
+						            </div>
+						        </div>
 
-					            </div>
-					        </div>
+						        <div class="col-md-6">
+						            <div class="form-group">
+						                <label for="selectNovoCargoReajuste">Novo Cargo</label>
+						                <select id="selectNovoCargoReajuste" class="form-control" required ng-model="ct.solicitacaoReajuste.Promocao.CargoNomePromocao" required ng-options="c.CargoNome as c.CargoNome for c in ct.cargos">
+						                    <option value=''></option>
+						                </select>
+						            </div>
+						        </div>
+						    </div>
+
+						    <div class="row">
+
+						        <!-- <div class="col-md-3">
+						            <div class="form-group">
+						                <label for="input-empresa">Empresa</label>
+						                <input id="input-empresa" type="text" class="form-control" disabled ng-model="ctAlteracoes.funcionario.EmpresaNome">
+						            </div>
+						        </div> -->
 
 
-					    </div>
+						        <div class="col-md-4">
+						            <div class="form-group">
+						                <label for="inputSalarioAnteriorReajuste">Salário Atual</label>
+						                <input id="inputSalarioAnteriorReajuste" type="text" class="form-control" disabled ng-model="ct.solicitacaoReajuste.Salario">
+						            </div>
+						        </div>
+
+						        <div class="col-md-4">
+						            <div class="form-group">
+						                <label for="inputSalarioNovoReajuste">Novo Salário</label>
+						                <input id="inputSalarioNovoReajuste" required type="text" class="form-control" required ng-model="ct.solicitacaoReajuste.Promocao.SalarioPromocao">
+						            </div>
+						        </div>
+
+						        <div class="col-md-4">
+						            <div class="row">
+						                <div class="col-md-12">
+						                    <label for="inputAlteracaoPercentualReajuste">Percentual de aumento</label>
+						                </div>
+						            </div>
+
+						            <div class="row">
+
+						                <div class="col-md-12">
+						                    <div class="input-group input-group-sm">
+						                        <input id="inputAlteracaoPercentualReajuste" disabled type="text" class="form-control" ng-model="ct.percentualAumento">
+						                        <span class="input-group-addon">%</span>
+						                    </div>
+						                </div>
+
+						            </div>
+						        </div>
 
 
-					    <div class="row">
-					        <div class="col-md-12">
-					            <div class="form-group">
-					                <label for="textareaInfoAdicionalReajuste">Informações Adicionais</label>
-					                <textarea id="textareaInfoAdicionalReajuste" placeholder="Digite aqui as observações e as informações adicionais" rows="3" class="form-control"></textarea>
-					            </div>
-					        </div>
-					    </div>
+						    </div>
 
-					    <button class="btn btn-success btn-sm pull-right">
-					        Enviar Solicitação
-					    </button>
+
+						    <div class="row">
+						        <div class="col-md-12">
+						            <div class="form-group">
+						                <label for="textareaInfoAdicionalReajuste">Informações Adicionais</label>
+						                <textarea id="textareaInfoAdicionalReajuste" placeholder="Digite aqui as observações e as informações adicionais" rows="3" class="form-control"></textarea>
+						            </div>
+						        </div>
+						    </div>
+
+						    <button class="btn btn-success btn-sm pull-right" ng-disabled="formReajuste.$invalid" data-dismiss="modal" ng-click="ct.solicitarReajuste(ct.solicitacaoReajuste)">
+						        Enviar Solicitação
+						    </button>
+
+					    </form>
 
 
 

@@ -4,9 +4,51 @@
 
     <h2 class="title">Desligamentos</h2>
 
+    <div class="panel-collapse">
+		<a href class="title" data-target="#viewDesligamentos">Desligamentos <i class="fa fa-angle-down pull-right"></i></a>
+		<div id="viewDesligamentos" class="collapse show panel-collapsible">
+			
+			<div class="content">
+
+				<table class="table table-sm">
+					<thead>
+						<tr>
+							<th>Codigo do CR</th>
+							<th>Matrícula</th>
+							<th>Nome</th>
+							<th>Cargo</th>
+							<th>C.H.</th>
+							<th>Data Contratação</th>
+							<th>Data Desligamento</th>
+							<th>Salario</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr ng-repeat="d in ct.desligamentos">
+							<td>{{d.CodigoCR}}</td>
+							<td>{{d.Matricula}}</td>
+							<td>{{d.Nome}}</td>
+							<td>{{d.CargoNome}}</td>
+							<td>{{d.CargaHoraria}} h</td>
+							<td>{{d.DataAdmissao | date:'dd/MM/yyyy'}}</td>
+							<!-- <td>{{d.HorarioSolicitacao | date:'dd/MM HH:mm'}}</td> -->
+							<td>{{d.MesDesligamento | date:'MMM/yy'}}</td>
+							<td>R$ {{d.Salario | number:2}}</td>
+						</tr>
+					</tbody>
+				</table>
+
+
+			</div>
+
+
+		</div>
+	</div>
+
 </div>
 
-<a ui-sref="modulos" class="link-voltar">
+<a ui-sref="pthSubModulos" class="link-voltar">
 	<i class="fa fa-arrow-circle-left"></i>
 	Voltar
 </a>

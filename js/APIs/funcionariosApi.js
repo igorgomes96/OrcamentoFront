@@ -8,6 +8,12 @@ angular.module('orcamentoApp').service('funcionariosApi', ['dataService', '$q', 
 		});
 	}
 
+	self.getFuncionario = function(matricula) {
+		return $q(function(resolve) {
+			resolve({data: dataService.getFuncionario(matricula)});
+		});
+	}
+
 	self.getDesligamentos = function() {
 		return $q(function(resolve) {
 			resolve({data: dataService.getDesligamentos()});

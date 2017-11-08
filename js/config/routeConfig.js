@@ -12,7 +12,8 @@ angular.module('orcamentoApp').config(['$stateProvider', '$urlRouterProvider', '
 
     .state('modulos', {
     	url: '/modulos',
-    	templateUrl: 'components/modulos/modulos.html'
+    	templateUrl: 'components/modulos/modulos.html',
+        controller: 'modulosCtrl as ct'
     })
 
     .state('orcamentoCiclos', {

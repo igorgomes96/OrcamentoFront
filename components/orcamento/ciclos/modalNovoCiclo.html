@@ -26,19 +26,25 @@
 
                             <div class="row">
 
-                                <div class="form-group col-sm-6">
+                                <div class="form-group col-sm-4">
                                     <label>Mês Início</label>
                                     <input class="form-control" type="date" name="inputMesInicio" id="inputMesInicio" required ng-model="ct.novoCiclo.DataInicio">
                                 </div>
 
-                                <div class="form-group col-sm-6">
+                                <div class="form-group col-sm-4">
                                     <label>Mês Fim</label>
                                     <input class="form-control" type="date" name="inputMesFim" id="inputMesFim" required ng-model="ct.novoCiclo.DataFim">
                                 </div>
 
+                                <div class="form-group col-sm-4">
+                                    <label for="selectMesReal">Mês Base</label>
+                                    <select class="form-control" name="selectMesReal" id="selectMesReal" required ng-model="ct.novoCiclo.MesRealBase" ng-options="(m | date:'MMM/yy') for m in ct.realSelecionadoMeses">
+                                    </select>
+                                </div>
+
                             </div>
 
-                            <div  class="row">
+<!--                             <div  class="row">
 
                                 <div class="form-group col-sm-6">
                                     <label for="selectCicloReal">Ciclo Real Base</label>
@@ -52,7 +58,7 @@
                                     </select>
                                 </div>
 
-                            </div>
+                            </div> -->
                         </form>
 
                     </div>
@@ -60,7 +66,7 @@
             </div>  
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-primary" class="btn btn-default" data-dismiss="modal" ng-disabled="formNovoCiclo.$invalid" ng-click="ct.salvarCiclo()">Salvar</button>
+                <button type="button" class="btn btn-primary" class="btn btn-default" ng-disabled="formNovoCiclo.$invalid" ng-click="ct.salvarCiclo()">Salvar</button>
             </div>
         </div>
         <!-- /.modal-content -->

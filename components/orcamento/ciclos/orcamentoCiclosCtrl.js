@@ -38,6 +38,7 @@ angular.module('orcamentoApp').controller('orcamentoCiclosCtrl', ['ciclosApi', f
 	self.salvarCiclo = function() {
 		ciclosApi.postCicloOrcamento(self.novoCiclo)
 		.then(function() {
+			$('#modal-novo-ciclo').modal('hide')
 			self.novoCiclo = null;
 			loadCiclosOrcamento();
 		});

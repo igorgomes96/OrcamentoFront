@@ -2,7 +2,44 @@
 
 <div class="content-view-menu">
 
-    <h2 class="title">Reajustes Por Mérito</h2>
+    <h2 class="title">Reajustes por Mérito</h2>
+
+    <div class="panel-collapse">
+		<a href class="title" data-target="#viewReajustes">Reajustes <i class="fa fa-angle-down pull-right"></i></a>
+		<div id="viewReajustes" class="collapse show panel-collapsible">
+
+		    <div class="content">
+
+				<table class="table table-sm">
+					<thead>
+						<tr>
+							<th>Codigo do CR</th>
+							<th>Matrícula</th>
+							<th>Nome</th>
+							<th>Cargo Atual</th>
+							<th>Salário Atual</th>
+							<th>Mês Reajuste</th>
+							<th>Novo Cargo</th>
+							<th>Novo Salário</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr ng-repeat="s in ct.reajustes">
+							<td>{{s.CodigoCR}}</td>
+							<td>{{s.Matricula}}</td>
+							<td>{{s.Nome}}</td>
+							<td>{{s.CargoNome}}</td>
+							<td>R$ {{s.Salario | number:2}}</td>
+							<td>{{s.Promocao.MesPromocao | date:'MMM/yy'}}</td>
+							<td>{{s.Promocao.CargoNomePromocao}}</td>
+							<td>R$ {{s.Promocao.SalarioPromocao | number:2}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
 
 </div>
 

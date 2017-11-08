@@ -17,7 +17,7 @@
                 <td><p>{{f.Nome}}</p></td>
                 <td><p>{{f.CargoNome}}</p></td>
                 <td ng-repeat="e in f.EventosFolha[ct.eventoAtual]">
-                    <input type="text" class="form-control text-center input-sm" ng-model="e.Valor" required ui-input-child>
+                    <input type="text" class="form-control text-center input-sm" ng-model="e.Valor" required ui-input-child ng-if="e.Mes >= f.DataInicioCR && (!f.DataFimCR || e.Mes < f.DataFimCR)">
                 </td>
             </tr>
         </form>

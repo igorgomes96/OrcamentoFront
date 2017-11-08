@@ -21,6 +21,14 @@ div.module-card a {
 	position: relative;
 }
 
+.module-card span.badge {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    padding: 4px 6px;
+    font-size: .7rem;
+}
+
 .module-card:hover {
 	color: initial;
 }

@@ -14,6 +14,12 @@ angular.module('orcamentoApp').service('pthOrcadoSolicitacoesApi', ['dataService
 		});
 	}
 
+	self.getQtdaSolicitacoesGestorOrcado = function() {
+		return $q(function(resolve) {
+			resolve({data: dataService.getQtdaSolicitacoesGestorOrcado()});
+		});
+	}
+
 	self.postAprovarContratacaoOrcamento = function(contratacao) {
 		return $q(function(resolve) {
 			resolve({data: dataService.aprovarContratacaoOrcamento(contratacao)});

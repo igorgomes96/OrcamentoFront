@@ -43,6 +43,13 @@ angular.module('orcamentoApp').service('dataService', [function() {
 		}
 	];
 
+	var empresas = [
+		{
+			Codigo: 1,
+			Nome: 'Algar Telecom'
+		}
+	];
+
 	var encargosFilial = [
 		{
 			Empresa: 'Algar Telecom',
@@ -121,68 +128,72 @@ angular.module('orcamentoApp').service('dataService', [function() {
 	];
 
 
-
 	var pthRealSolicitacoesContratacoes = [
-		{
-			Codigo: 1,
-			CodigoCR: 11111,
-			Solicitante: 'Nome do Solicitante',
-			HorarioSolicitacao: new Date(),
-			Cidade: 'Uberlândia',
-			CargoNome: 'Cargo Exemplo 1111',
-			CargaHoraria: 220,
-			Salario: 6000,
-			Qtda: 2,
-			DataContratacao: new Date(2018, 7, 15),
-			Descricao: 'Solicitação de Contratação de 2 Cargo Exemplo 1111 para Uberlândia.',
-			Orcado: false,
-			ConfirmarOrcamento: undefined,
-			Aprovado: undefined,
-			MotivoReprovacao: undefined
-		},
-		{
-			Codigo: 2,
-			CodigoCR: 22222,
-			Solicitante: 'Nome do Solicitante',
-			HorarioSolicitacao: new Date(),
-			Cidade: 'Uberaba',
-			CargoNome: 'Cargo Exemplo 2222',
-			CargaHoraria: 220,
-			Salario: 7000,
-			Qtda: 6,
-			DataContratacao: new Date(2018, 7, 15),
-			Descricao: 'Solicitação de Contratação de 6 Cargo Exemplo 2222 para Uberaba.',
-			Orcado: false,
-			ConfirmarOrcamento: undefined,
-			Aprovado: undefined,
-			MotivoReprovacao: undefined
-		}
+		// {
+		// 	Codigo: 1,
+		// 	CodigoCR: 11111,
+		// 	Solicitante: 'Nome do Solicitante',
+		// 	HorarioSolicitacao: new Date(),
+		// 	Cidade: 'Uberlândia',
+		// 	CargoNome: 'Cargo Exemplo 1111',
+		// 	CargaHoraria: 220,
+		// 	Salario: 6000,
+		// 	Qtda: 2,
+		// 	DataContratacao: new Date(2018, 7, 15),
+		// 	Descricao: 'Solicitação de Contratação de 2 Cargo Exemplo 1111 para Uberlândia.',
+		// 	Orcado: false,
+		// 	ConfirmarOrcamento: undefined,
+		// 	Aprovado: undefined,
+		// 	MotivoReprovacao: undefined
+		// },
+		// {
+		// 	Codigo: 2,
+		// 	CodigoCR: 22222,
+		// 	Solicitante: 'Nome do Solicitante',
+		// 	HorarioSolicitacao: new Date(),
+		// 	Cidade: 'Uberaba',
+		// 	CargoNome: 'Cargo Exemplo 2222',
+		// 	CargaHoraria: 220,
+		// 	Salario: 7000,
+		// 	Qtda: 6,
+		// 	DataContratacao: new Date(2018, 7, 15),
+		// 	Descricao: 'Solicitação de Contratação de 6 Cargo Exemplo 2222 para Uberaba.',
+		// 	Orcado: false,
+		// 	ConfirmarOrcamento: undefined,
+		// 	Aprovado: undefined,
+		// 	MotivoReprovacao: undefined
+		// }
 	];
 
+
 	var pthRealSolicitacoesPromocoes = [
-		{
-			Matricula: '1111',
-			Nome: 'Funcionario 1111',
-			CargoNome: 'Cargo Exemplo 1111',
-			CargaHoraria: 220,
-			Salario: 1111,
-			DataAdmissao: new Date(2011, 01, 01),
-			Situacao: 'Funcionário Ativo',
-			CodigoCR: 11111,
-			HorasExtras: angular.copy(horasExtras),
-			HorasNoturnas: angular.copy(horasNoturnas),
-			Ferias: angular.copy(ferias),
-			EventosFolha: angular.copy(eventosFolha),
-			DataInicioCR: new Date(2018, 0, 1),
-			DataFimCR: null,
-			MesDesligamento: null,
-			Promocao: {
-				MesPromocao: new Date(2018, 3, 1),
-				CargoNomePromocao: 'Cargo Exemplo 6666',
-				SalarioPromocao: 4000,
-				Aprovado: undefined
-			}
-		}
+		// {
+		// 	Matricula: '1111',
+		// 	Nome: 'Funcionario 1111',
+		// 	CargoNome: 'Cargo Exemplo 1111',
+		// 	CargaHoraria: 220,
+		// 	Salario: 1111,
+		// 	DataAdmissao: new Date(2011, 01, 01),
+		// 	Situacao: 'Funcionário Ativo',
+		// 	CodigoCR: 11111,
+		// 	HorasExtras: angular.copy(horasExtras),
+		// 	HorasNoturnas: angular.copy(horasNoturnas),
+		// 	Ferias: angular.copy(ferias),
+		// 	EventosFolha: angular.copy(eventosFolha),
+		// 	DataInicioCR: new Date(2018, 0, 1),
+		// 	DataFimCR: null,
+		// 	MesDesligamento: null,
+		// 	Promocao: {
+		// 		MesPromocao: new Date(2018, 3, 1),
+		// 		CargoNomePromocao: 'Cargo Exemplo 6666',
+		// 		SalarioPromocao: 4000,
+		// 		Aprovado: undefined,
+		// 		Orcado: false,
+		// 		ConfirmarOrcamento: undefined,
+		// 		Aprovado: undefined,
+		// 		MotivoReprovacao: undefined
+		// 	}
+		// }
 	];
 
 
@@ -486,7 +497,8 @@ angular.module('orcamentoApp').service('dataService', [function() {
 			EventosFolha: angular.copy(eventosFolha),
 			DataInicioCR: new Date(2018, 0, 1),
 			DataFimCR: null,
-			MesDesligamento: null
+			MesDesligamento: null,
+			TransfAprovada: true
 		},
 		{
 			Matricula: '2222',
@@ -501,15 +513,10 @@ angular.module('orcamentoApp').service('dataService', [function() {
 			HorasNoturnas: angular.copy(horasNoturnas),
 			Ferias: angular.copy(ferias),
 			EventosFolha: angular.copy(eventosFolha),
-			Promocao: {
-				MesPromocao: new Date(2018, 5, 1),
-				CargoNomePromocao: 'Cargo Exemplo 5555',
-				SalarioPromocao: 2323,
-				Aprovado: undefined
-			},
 			DataInicioCR: new Date(2018, 0, 1),
 			DataFimCR: null,
-			MesDesligamento: null
+			MesDesligamento: null,
+			TransfAprovada: true
 		},
 		{
 			Matricula: '3333',
@@ -526,7 +533,8 @@ angular.module('orcamentoApp').service('dataService', [function() {
 			EventosFolha: angular.copy(eventosFolha),
 			DataInicioCR: new Date(2018, 0, 1),
 			DataFimCR: null,
-			MesDesligamento: null
+			MesDesligamento: null,
+			TransfAprovada: true
 		},
 		{
 			Matricula: '4444',
@@ -543,97 +551,77 @@ angular.module('orcamentoApp').service('dataService', [function() {
 			EventosFolha: angular.copy(eventosFolha),
 			DataInicioCR: new Date(2018, 0, 1),
 			DataFimCR: null,
-			MesDesligamento: null
+			MesDesligamento: null,
+			TransfAprovada: true
 		}
 	];
 
 
 	var contratacoes = [
-		{
-			Codigo: 1,
-			CargoNome: 'Cargo Exemplo 1111',
-			CargaHoraria: 220,
-			Cidade: 'Uberlândia',
-			Salario: 4000,
-			MotivoContratacao: 'Aumento de Quadro',
-			QtdaMensal: angular.copy(qtdaMensalContratacao),
-			CodigoCR: 11111,
-			NomeUsuario: 'Gestor 1',
-			Aprovado: undefined,
-			DataContratacao: new Date(2018, 0, 1),
-			Qtda: 2
-		},
-		{
-			Codigo: 2,
-			CargoNome: 'Cargo Exemplo 2222',
-			CargaHoraria: 220,
-			Cidade: 'Uberlândia',
-			Salario: 3000,
-			MotivoContratacao: 'Substituição',
-			QtdaMensal: angular.copy(qtdaMensalContratacao),
-			CodigoCR: 11111,
-			NomeUsuario: 'Gestor 1',
-			Aprovado: undefined,
-			DataContratacao: new Date(2018, 0, 1),
-			Qtda: 2
-		},
-		{
-			Codigo: 3,
-			CargoNome: 'Cargo Exemplo 3333',
-			CargaHoraria: 220,
-			Cidade: 'Uberaba',
-			Salario: 5000,
-			MotivoContratacao: 'Substituição',
-			QtdaMensal: angular.copy(qtdaMensalContratacao),
-			CodigoCR: 22222,
-			NomeUsuario: 'Gestor 1',
-			Aprovado: undefined,
-			DataContratacao: new Date(2018, 0, 1),
-			Qtda: 2
-		}
+		// {
+		// 	Codigo: 1,
+		// 	CargoNome: 'Cargo Exemplo 1111',
+		// 	CargaHoraria: 220,
+		// 	Cidade: 'Uberlândia',
+		// 	Salario: 4000,
+		// 	MotivoContratacao: 'Aumento de Quadro',
+		// 	QtdaMensal: angular.copy(qtdaMensalContratacao),
+		// 	CodigoCR: 11111,
+		// 	NomeUsuario: 'Gestor 1',
+		// 	Aprovado: undefined,
+		// 	DataContratacao: new Date(2018, 0, 1),
+		// 	Qtda: 2
+		// },
+		// {
+		// 	Codigo: 2,
+		// 	CargoNome: 'Cargo Exemplo 2222',
+		// 	CargaHoraria: 220,
+		// 	Cidade: 'Uberlândia',
+		// 	Salario: 3000,
+		// 	MotivoContratacao: 'Substituição',
+		// 	QtdaMensal: angular.copy(qtdaMensalContratacao),
+		// 	CodigoCR: 11111,
+		// 	NomeUsuario: 'Gestor 1',
+		// 	Aprovado: undefined,
+		// 	DataContratacao: new Date(2018, 0, 1),
+		// 	Qtda: 2
+		// },
+		// {
+		// 	Codigo: 3,
+		// 	CargoNome: 'Cargo Exemplo 3333',
+		// 	CargaHoraria: 220,
+		// 	Cidade: 'Uberaba',
+		// 	Salario: 5000,
+		// 	MotivoContratacao: 'Substituição',
+		// 	QtdaMensal: angular.copy(qtdaMensalContratacao),
+		// 	CodigoCR: 22222,
+		// 	NomeUsuario: 'Gestor 1',
+		// 	Aprovado: undefined,
+		// 	DataContratacao: new Date(2018, 0, 1),
+		// 	Qtda: 2
+		// }
 	];
 
 	var transferencias = [
-		{
-			Codigo: 1,
-			MatriculaFuncionario: '2222',
-			NomeFuncionario: 'Funcionario 2222',
-			CargoNome: 'Cargo Exemplo 2222',
-			Salario: 1111,
-			CROrigem: 11111,
-			CRDestino: 22222,
-			DataSolicitacao: new Date(),
-			MesTransferencia: new Date(2018, 05, 01),
-			Status: 'Aguardando Aprovação'
-		}
+		// {
+		// 	Codigo: 1,
+		// 	MatriculaFuncionario: '2222',
+		// 	NomeFuncionario: 'Funcionario 2222',
+		// 	CargoNome: 'Cargo Exemplo 2222',
+		// 	Salario: 1111,
+		// 	CROrigem: 11111,
+		// 	CRDestino: 22222,
+		// 	DataSolicitacao: new Date(),
+		// 	MesTransferencia: new Date(2018, 05, 01),
+		// 	Status: 'Aguardando Aprovação',
+		// 	Aprovado: undefined
+		// }
 	];
 
 	crsUser.forEach(function(x) {
 		x.InputsFolha = angular.copy(inputsFolha);
 	});
 
-	self.aprovarContratacaoOrcamento = function(contratacao) {
-		contratacao.Aprovado = true;
-		pthRealSolicitacoesContratacoes.push({
-			Codigo: pthRealSolicitacoesContratacoes.length + 1,
-			CodigoCR: contratacao.CodigoCR,
-			Solicitante: 'Nome do Solicitante',
-			HorarioSolicitacao: new Date(),
-			Cidade: contratacao.Cidade,
-			CargoNome: contratacao.CargoNome,
-			CargaHoraria: contratacao.CargaHoraria,
-			Salario: contratacao.Salario,
-			Qtda: contratacao.Qtda,
-			DataContratacao: contratacao.DataContratacao,
-			Descricao: '(Solicitado no Orçamento)',
-			Orcado: true,
-			ConfirmarOrcamento: false,
-			Aprovado: undefined,
-			MotivoReprovacao: undefined
-		});
-
-		console.log(pthRealSolicitacoesContratacoes);
-	}
 
 	self.postTransferencia = function(transf) {
 		var data = transf.DataInicioCR;
@@ -656,13 +644,34 @@ angular.module('orcamentoApp').service('dataService', [function() {
 		if (funcFiltro.length > 0) {
 			transferencia.CROrigem = funcFiltro[0].CodigoCR;
 			funcFiltro[0].DataFimCR = addDays(transferencia.MesTransferencia, -1);
+			console.log(funcFiltro[0]);
 		}
 
 		transferencias.push(transferencia);
 		funcionarios.push(transf);
+	}
 
-		console.log(transferencias);
-		console.log(funcionarios);
+
+	self.aprovarTransferencia = function(transf) {
+		transf.Status = 'Aprovado';
+		transf.Aprovado = true;
+		var func = self.getFuncionario(transf.MatriculaFuncionario);
+		if (func) {
+			func.TransfAprovada = true;
+		}
+	}
+
+	self.reprovarTransferencia = function(transf) {
+		transf.Status = 'Reprovado';
+		transf.Aprovado = false;
+		var func = self.getFuncionario(transf.MatriculaFuncionario);
+		if (func) {
+			func.TransfAprovada = false;
+		}
+	}
+
+	self.getEmpresas = function() {
+		return empresas;
 	}
 
 	self.getDesligamentos = function() {
@@ -694,6 +703,11 @@ angular.module('orcamentoApp').service('dataService', [function() {
 		return ciclosOrcamento;
 	}
 
+	self.postPthRealSolicitacoesPromocoes = function(solicitacao) {
+		solicitacao.Promocao['Aprovado'] = undefined;
+		pthRealSolicitacoesPromocoes.push(solicitacao);
+	}
+
 	self.postCicloOrcamento = function(ciclo) {
 		ciclo['Codigo'] = ciclosOrcamento.length + 1;
 		ciclosOrcamento.push(ciclo);
@@ -701,6 +715,26 @@ angular.module('orcamentoApp').service('dataService', [function() {
 
 	self.getUsuarios = function() {
 		return usuarios;
+	}
+
+	self.getQtdaSolicitacoesGestorReal = function() {
+		return pthRealSolicitacoesContratacoes.filter(x => {
+			return x.Aprovado === undefined && !x.Orcado;
+		}).length + pthRealSolicitacoesPromocoes.filter(x => {
+			return x.Promocao && x.Promocao.Aprovado === undefined && !x.Promocao.Orcado;
+		}).length;
+	}
+
+	self.getQtdaSolicitacoesGestorOrcado = function() {
+		return contratacoes.filter(x => {
+			return x.Aprovado === undefined;
+		}).length + funcionarios.filter(x => {
+			return x.Promocao && x.Promocao.Aprovado === undefined;
+		}).length;
+	}
+
+	self.getQtdaSolicitacoesGestorTotal = function() {
+		return self.getQtdaSolicitacoesGestorReal() + self.getQtdaSolicitacoesGestorOrcado();
 	}
 
 	self.getPthOrcadoSolicitacoesContratacoes = function(aprovado) {
@@ -719,13 +753,51 @@ angular.module('orcamentoApp').service('dataService', [function() {
 		return pthRealSolicitacoesPromocoes.filter(x => (x.Promocao && x.Promocao.Aprovado === aprovado));
 	}
 
+	self.postPthRealSolicitacoesContratacoes = function(solicitacao) {
+		solicitacao.Codigo = pthRealSolicitacoesContratacoes.length + 1;
+		solicitacao.Solicitante = 'Nome do Solicitante';
+		solicitacao.HorarioSolicitacao = new Date();
+		solicitacao.Orcado = false;
+		solicitacao.ConfirmarOrcamento = undefined;
+		solicitacao.Aprovado = undefined;
+		solicitacao.MotivoReprovacao = undefined;
+		pthRealSolicitacoesContratacoes.push(solicitacao);
+		console.log(pthRealSolicitacoesContratacoes);
+	}
+
 	self.aprovarReajusteReal = function(solicitacao) {
 		solicitacao.Promocao.Aprovado = true;
 	}
 
 	self.aprovarReajusteOrcamento = function(funcionario) {
 		funcionario.Promocao.Aprovado = true;
-		pthRealSolicitacoesPromocoes.push(funcionario);
+		var func = angular.copy(funcionario);
+		func.Promocao.Orcado = true,
+		func.Promocao.ConfirmarOrcamento = false,
+		func.Promocao.Aprovado = undefined,
+		func.Promocao.MotivoReprovacao = undefined
+		pthRealSolicitacoesPromocoes.push(func);
+	}
+
+	self.aprovarContratacaoOrcamento = function(contratacao) {
+		contratacao.Aprovado = true;
+		pthRealSolicitacoesContratacoes.push({
+			Codigo: pthRealSolicitacoesContratacoes.length + 1,
+			CodigoCR: contratacao.CodigoCR,
+			Solicitante: 'Nome do Solicitante',
+			HorarioSolicitacao: new Date(),
+			Cidade: contratacao.Cidade,
+			CargoNome: contratacao.CargoNome,
+			CargaHoraria: contratacao.CargaHoraria,
+			Salario: contratacao.Salario,
+			Qtda: contratacao.Qtda,
+			DataContratacao: contratacao.DataContratacao,
+			Descricao: '(Solicitado no Orçamento)',
+			Orcado: true,
+			ConfirmarOrcamento: false,
+			Aprovado: undefined,
+			MotivoReprovacao: undefined
+		});
 	}
 
 	self.aprovarContratacaoReal = function(contratacao) {
@@ -738,8 +810,16 @@ angular.module('orcamentoApp').service('dataService', [function() {
 
 	self.getFuncionariosInfo = function(cr) {
 		return funcionarios.filter(function(x) {
-			return !cr || x.CodigoCR == cr;
+			return (!cr || x.CodigoCR == cr) && x.TransfAprovada === true;
 		});
+	}
+
+	self.getFuncionario = function(matricula) {
+		var temp = funcionarios.filter(x => x.Matricula == matricula);
+		if (temp.length > 0)
+			return temp[0];
+		else
+			return null;
 	}
 
 	self.getCRsUser = function() {

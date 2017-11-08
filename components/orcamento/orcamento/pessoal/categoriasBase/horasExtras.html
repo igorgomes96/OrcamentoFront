@@ -17,7 +17,7 @@
                 <td><p>{{f.Nome}}</p></td>
                 <td><p>{{f.CargoNome}}</p></td>
                 <td ng-repeat="he in f.HorasExtras['he' + ct.percHE]">
-                    <input type="text" class="form-control text-center input-sm" ng-model="he.QtdaHoras" required ui-input-child ng-show="he.Mes >= f.DataInicioCR">
+                    <input type="text" class="form-control text-center input-sm" ng-model="he.QtdaHoras" required ui-input-child ng-show="he.Mes >= f.DataInicioCR && (!f.DataFimCR || he.Mes < f.DataFimCR)">
                 </td>
             </tr>
         </form>

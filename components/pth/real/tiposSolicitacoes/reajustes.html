@@ -16,7 +16,7 @@
 		</thead>
 
 		<tbody>
-			<tr ng-repeat="s in ct.reajustes">
+			<tr ng-repeat="s in ct.reajustes" ng-class="{'solicitacao-orcado': s.Promocao.Orcado}">
 				<td>{{s.CodigoCR}}</td>
 				<td>{{s.Matricula}}</td>
 				<td>{{s.Nome}}</td>
@@ -26,9 +26,12 @@
 				<td>{{s.Promocao.CargoNomePromocao}}</td>
 				<td>R$ {{s.Promocao.SalarioPromocao | number:2}}</td>
 				<td>
-					<button class="btn btn-xs btn-danger pull-right"><i class="fa fa-thumbs-down"></i></button>
-					<button class="btn btn-xs btn-success pull-right" ng-click="ct.aprovar(s)"><i class="fa fa-thumbs-up"></i></button>
-					<button class="btn btn-xs btn-info pull-right" data-toggle="modal" data-target="#modal-info-reajuste" ng-click="ct.reajusteSelecionado = s"><i class="fa fa-info"></i></button>
+					<i ng-if="s.Promocao.Orcado" class="fa fa-hourglass-half pull-right"></i>
+					<div ng-if="!s.Promocao.Orcado">
+						<button class="btn btn-xs btn-danger pull-right"><i class="fa fa-thumbs-down"></i></button>
+						<button class="btn btn-xs btn-success pull-right" ng-click="ct.aprovarReajuste(s)"><i class="fa fa-thumbs-up"></i></button>
+						<button class="btn btn-xs btn-info pull-right" data-toggle="modal" data-target="#modal-info-reajuste" ng-click="ct.reajusteSelecionado = s"><i class="fa fa-info"></i></button>
+					</div>
 				</td>
 			</tr>
 		</tbody>

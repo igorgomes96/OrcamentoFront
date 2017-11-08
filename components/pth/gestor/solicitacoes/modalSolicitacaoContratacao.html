@@ -17,7 +17,7 @@
 					        <div class="col-md-6">
 					            <div class="form-group">
 					                <label for="inputEmpresa">Empresa</label>
-					                <select id="inputEmpresa" class="form-control">
+					                <select id="inputEmpresa" class="form-control" ng-model="ct.novaContratacao.Empresa" ng-options="e.Nome as e.Nome for e in ct.empresas">
 					                    <option value=''></option>
 					                </select>
 					            </div>
@@ -26,7 +26,7 @@
 					        <div class="col-md-6">
 					            <div class="form-group">
 					                <label for="selectCRDestino">CR de destino</label>
-					                <select id="selectCRDestino" class="form-control">
+					                <select id="selectCRDestino" class="form-control" ng-model="ct.novaContratacao.CodigoCR" ng-options="c.CodigoCR as c.CodigoCR for c in ct.crs">
 					                    <option value=''></option>
 					                </select>
 					            </div>
@@ -39,7 +39,7 @@
 					        <div class="col-md-6">
 					            <div class="form-group">
 					                <label for="inputCidade">Cidade</label>
-					                <select id="inputCidade" class="form-control">
+					                <select id="inputCidade" class="form-control" ng-model="ct.novaContratacao.Cidade" ng-options="c.Cidade for c in ct.filiais">
 					                    <option value=''></option>
 					                </select>
 					            </div>
@@ -48,7 +48,7 @@
 					        <div class="col-md-6">
 					            <div class="form-group">
 					                <label for="selectCargoContratacao">Cargo</label>
-					                <select id="selectCargoContratacao" class="form-control">
+					                <select id="selectCargoContratacao" class="form-control" ng-model="ct.novaContratacao.CargoNome" ng-options="c.CargoNome as c.CargoNome for c in ct.cargos">
 					                    <option value=''></option>
 					                </select>
 					            </div>
@@ -65,8 +65,9 @@
 					        <div class="col-sm-3">
 					            <div class="form-group">
 					                <label for="selectCH">Carga Horária</label>
-					                <select id="selectCH" class="form-control">
+					                <select id="selectCH" class="form-control" ng-model="ct.novaContratacao.CargaHoraria">
 					                    <option value=''></option>
+					                    <option value='220'>220 h</option>
 					                </select>
 					            </div>
 					        </div>
@@ -74,21 +75,21 @@
 					        <div class="col-sm-3">
 					            <div class="form-group">
 					                <label for="inputSalarioContratacao">Salário</label>
-					                <input id="inputSalarioContratacao" class="form-control" type="text">
+					                <input id="inputSalarioContratacao" class="form-control" type="number" ng-model="ct.novaContratacao.Salario">
 					            </div>
 					        </div>
 
 					        <div class="col-sm-3">
 					            <div class="form-group">
 					                <label for="inputQtdaContratacao">Qtda</label>
-					                <input id="inputQtdaContratacao" class="form-control" type="number">
+					                <input id="inputQtdaContratacao" class="form-control" type="number" ng-model="ct.novaContratacao.Qtda">
 					            </div>
 					        </div>
 
 					        <div class="col-sm-3">
 					            <div class="form-group">
 					                <label for="inputDataPrevista">Data Prevista</label>
-					                <input type="date" id="inputDataPrevista" class="form-control">
+					                <input type="date" id="inputDataPrevista" class="form-control" ng-model="ct.novaContratacao.DataContratacao">
 					            </div>
 					        </div>
 
@@ -104,7 +105,7 @@
 					        </div>
 					    </div>
 
-					    <button class="btn btn-success btn-sm pull-right">Enviar Solicitação</button>
+					    <button class="btn btn-success btn-sm pull-right" data-dismiss="modal" ng-click="ct.solicitarContratacao(ct.novaContratacao)">Enviar Solicitação</button>
 
 
                     </div>

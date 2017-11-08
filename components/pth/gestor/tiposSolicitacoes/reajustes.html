@@ -8,7 +8,7 @@
 		</div>
 	</div>
 
-	<table class="table table-sm">
+	<table class="table table-sm" style="margin-top: 10px;">
 		<thead>
 			<tr>
 				<th>Codigo do CR</th>
@@ -35,7 +35,7 @@
 				<td>R$ {{s.Promocao.SalarioPromocao | number:2}}</td>
 				<td>
 					<button class="btn btn-xs btn-info pull-right" data-toggle="modal" data-target="#modal-info-reajuste" ng-click="ct.reajusteSelecionado = s"><i class="fa fa-info"></i></button>
-					<div ng-if="s.Orcado">
+					<div ng-if="s.Promocao.Orcado">
 						<button class="btn btn-xs btn-success pull-right"><i class="fa fa-check"></i></button>
 						<button class="btn btn-xs btn-danger pull-right"><i class="fa fa-pencil-square-o"></i></button>
 					</div>
@@ -50,7 +50,7 @@
 	    <div class="modal-dialog modal-lg" role="document">
 	        <div class="modal-content">
 	            <div class="modal-header">
-	                <h5 class="modal-title">Solicitação de Contratação</h5>
+	                <h5 class="modal-title">Solicitação de Reajuste</h5>
 	                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	                    <span aria-hidden="true">&times;</span>
 	                </button>
