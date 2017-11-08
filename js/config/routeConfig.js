@@ -148,6 +148,51 @@ angular.module('orcamentoApp').config(['$stateProvider', '$urlRouterProvider', '
         controller: 'pthRealDesligamentosCtrl as ct'
     })
 
+
+    //PTH Gestor
+    .state('pthGestorDashboard', {
+        url: '/pth/gestor/dashboard',
+        templateUrl: 'components/pth/gestor/dashboard/dashboard.html',
+        controller: 'pthGestorDashboardCtrl as ct'
+    })
+
+    .state('pthGestorEventos', {
+        url: '/pth/gestor/eventosFolha',
+        templateUrl: 'components/pth/gestor/eventos/eventos.html',
+        controller: 'pthGestorEventosCtrl as ct'
+    })
+
+    .state('pthGestorBase', {
+        url: '/pth/gestor/base',
+        templateUrl: 'components/pth/gestor/base/base.html',
+        controller: 'pthGestorBaseCtrl as ct'
+    })
+
+    .state('pthGestorSolicitacoes', {
+        url: '/pth/gestor/solicitacoes',
+        templateUrl: 'components/pth/gestor/solicitacoes/solicitacoes.html',
+        controller: 'pthGestorSolicitacoesCtrl as ct'
+    })
+
+    .state('pthGestorContratacoes', {
+        url: '/pth/gestor/contratacoes',
+        templateUrl: 'components/pth/gestor/contratacoes/contratacoes.html',
+        controller: 'pthGestorContratacoesCtrl as ct'
+    })
+
+    .state('pthGestorReajustes', {
+        url: '/pth/gestor/reajustes',
+        templateUrl: 'components/pth/gestor/reajustes/reajustes.html',
+        controller: 'pthGestorReajustesCtrl as ct'
+    })
+
+    .state('pthGestorDesligamentos', {
+        url: '/pth/gestor/desligamentos',
+        templateUrl: 'components/pth/gestor/desligamentos/desligamentos.html',
+        controller: 'pthGestorDesligamentosCtrl as ct'
+    })
+
+
     .state('premissasEncargos', {
         url: '/premissas/encargos',
         views: {

@@ -3,8 +3,7 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div style="text-align: right;">
-				<button class="btn btn-sm btn-success">Aprovar Todas <i class="fa fa-thumbs-up"></i></button>
-				<button class="btn btn-sm btn-danger">Reprovar Todas <i class="fa fa-thumbs-down"></i></button>
+				<button class="btn btn-sm btn-success" data-toggle="modal" data-target="#modalSolicitacaoContratacao">Solicitar Contratação <i class="fa fa-plus"></i></button>
 			</div>
 		</div>
 	</div>
@@ -23,7 +22,7 @@
 		</thead>
 
 		<tbody>
-			<tr ng-repeat="s in ct.contratacoes" ng-class="{'solicitacao-orcado': s.Orcado}">
+			<tr ng-repeat="s in ct.contratacoes">
 				<td>{{s.CodigoCR}}</td>
 				<td>{{s.CargoNome}}</td>
 				<td>{{s.CargaHoraria}} h</td>
@@ -31,11 +30,10 @@
 				<td>{{s.Qtda}}</td>
 				<td>R$ {{s.Salario | number:2}}</td>
 				<td>
-					<i ng-if="s.Orcado" class="fa fa-hourglass-half pull-right"></i>
-					<div ng-if="!s.Orcado">
-						<button class="btn btn-xs btn-danger pull-right"><i class="fa fa-thumbs-down"></i></button>
-						<button class="btn btn-xs btn-success pull-right" ng-click="ct.aprovarContratacao(s)"><i class="fa fa-thumbs-up"></i></button>
-						<button class="btn btn-xs btn-info pull-right" data-toggle="modal" data-target="#modal-info-contratacao" ng-click="ct.contratacaoSelecionada = s"><i class="fa fa-info"></i></button>
+					<button class="btn btn-xs btn-info pull-right" data-toggle="modal" data-target="#modal-info-contratacao" ng-click="ct.contratacaoSelecionada = s"><i class="fa fa-info"></i></button>
+					<div ng-if="s.Orcado">
+						<button class="btn btn-xs btn-success pull-right"><i class="fa fa-check"></i></button>
+						<button class="btn btn-xs btn-danger pull-right"><i class="fa fa-pencil-square-o"></i></button>
 					</div>
 				</td>
 			</tr>
@@ -88,3 +86,5 @@
 	</div>
 
 </div>
+
+<div ng-include="'components/pth/gestor/solicitacoes/modalSolicitacaoContratacao.html'"></div>

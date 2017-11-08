@@ -129,3 +129,7 @@ div.panel-menu {
 	padding: .375rem .4rem;
 	font-size: .9rem;
 }
+
+.table tr.solicitacao-orcado {
+    color: #bbb;
+}

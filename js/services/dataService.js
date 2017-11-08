@@ -120,6 +120,8 @@ angular.module('orcamentoApp').service('dataService', [function() {
 		}
 	];
 
+
+
 	var pthRealSolicitacoesContratacoes = [
 		{
 			Codigo: 1,
@@ -135,8 +137,8 @@ angular.module('orcamentoApp').service('dataService', [function() {
 			Descricao: 'Solicitação de Contratação de 2 Cargo Exemplo 1111 para Uberlândia.',
 			Orcado: false,
 			ConfirmarOrcamento: undefined,
-			Aprovado: null,
-			MotivoReprovacao: null
+			Aprovado: undefined,
+			MotivoReprovacao: undefined
 		},
 		{
 			Codigo: 2,
@@ -152,8 +154,8 @@ angular.module('orcamentoApp').service('dataService', [function() {
 			Descricao: 'Solicitação de Contratação de 6 Cargo Exemplo 2222 para Uberaba.',
 			Orcado: false,
 			ConfirmarOrcamento: undefined,
-			Aprovado: null,
-			MotivoReprovacao: null
+			Aprovado: undefined,
+			MotivoReprovacao: undefined
 		}
 	];
 
@@ -182,6 +184,7 @@ angular.module('orcamentoApp').service('dataService', [function() {
 			}
 		}
 	];
+
 
 
 	var inputsFolha = [
@@ -625,11 +628,11 @@ angular.module('orcamentoApp').service('dataService', [function() {
 			Descricao: '(Solicitado no Orçamento)',
 			Orcado: true,
 			ConfirmarOrcamento: false,
-			Aprovado: null,
-			MotivoReprovacao: null
+			Aprovado: undefined,
+			MotivoReprovacao: undefined
 		});
 
-		console.log(contratacoes);
+		console.log(pthRealSolicitacoesContratacoes);
 	}
 
 	self.postTransferencia = function(transf) {
@@ -704,13 +707,33 @@ angular.module('orcamentoApp').service('dataService', [function() {
 		return contratacoes.filter(x => x.Aprovado === aprovado);
 	}
 
+	self.getPthRealSolicitacoesContratacoes = function(aprovado) {
+		return pthRealSolicitacoesContratacoes.filter(x => x.Aprovado === aprovado);
+	}
+
 	self.getPthOrcadoSolicitacoesReajustes = function(aprovado) {
 		return funcionarios.filter(x => (x.Promocao && x.Promocao.Aprovado === aprovado));
+	}
+
+	self.getPthRealSolicitacoesReajustes = function(aprovado) {
+		return pthRealSolicitacoesPromocoes.filter(x => (x.Promocao && x.Promocao.Aprovado === aprovado));
+	}
+
+	self.aprovarReajusteReal = function(solicitacao) {
+		solicitacao.Promocao.Aprovado = true;
 	}
 
 	self.aprovarReajusteOrcamento = function(funcionario) {
 		funcionario.Promocao.Aprovado = true;
 		pthRealSolicitacoesPromocoes.push(funcionario);
+	}
+
+	self.aprovarContratacaoReal = function(contratacao) {
+		contratacao.Aprovado = true;
+	}
+
+	self.reprovarContratacaoReal = function(contratacao) {
+		contratacao.Aprovado = false;
 	}
 
 	self.getFuncionariosInfo = function(cr) {

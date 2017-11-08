@@ -33,7 +33,22 @@ angular.module('orcamentoApp').controller('orcamentoPessoalContratacoesCtrl', ['
 	}
 
 	self.saveContratacao = function(cont) {
+		cont.QtdaMensal = Object.keys(cont.QtdaMensal).map(function (key) { return cont.QtdaMensal[key]; }); //Transforma objeto em array
+
+		var mes = null;
+		var qtda = 0;
+		cont.QtdaMensal.forEach(function(x,i) {
+		 	x.Mes = new Date(2018, i, 1);
+		 	if (x.Qtda > 0 && mes === null) mes = x.Mes;
+		 	qtda = x.Qtda || qtda;
+		});
+
+		mes = mes || new Date(2018, 0, 1);
+		cont.Qtda = qtda;
+		cont.DataContratacao = mes;
+		cont.CargaHoraria = 220;  
 		cont.CodigoCR = self.crAtual;
+		
 		contratacoesApi.postContratacao(cont)
 		.then(function(dado) {
 			loadContratacoes(self.crAtual);

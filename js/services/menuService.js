@@ -108,6 +108,48 @@ angular.module('orcamentoApp').service('menuService', [function() {
 		activeByText: activeByTextFunc
 	};
 
+	self.pthGestor = {
+		menu: [
+			{
+				icon: 'fa-line-chart',
+				text: 'Dashboard',
+				state: 'pthGestorDashboard'
+			},
+			{
+				icon: 'fa-upload',
+				text: 'Eventos de Folha',
+				state: 'pthGestorEventos'
+			},
+			{
+				icon: 'fa-question-circle',
+				text: 'Solicitações',
+				state: 'pthGestorSolicitacoes'
+			},
+			{
+				icon: 'fa-users',
+				text: 'Base',
+				state: 'pthGestorBase'
+			},
+			{
+				icon: 'fa-user-plus',
+				text: 'Contratações',
+				state: 'pthGestorContratacoes'
+			},
+			{
+				icon: 'fa-user-times',
+				text: 'Desligamentos',
+				state: 'pthGestorDesligamentos'
+			},
+			{
+				icon: 'fa-level-up',
+				text: 'Promoções',
+				state: 'pthGestorReajustes'
+			}
+		],
+		activeByText: activeByTextFunc
+	};
+
+
 	self.premissas = {
 		menu: [
 			{

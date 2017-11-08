@@ -2,6 +2,9 @@ angular.module('orcamentoApp').controller('pthOrcadoAprovacoesCtrl', ['menuServi
 
 	var self = this;
 
+	self.contratacoes = [];
+	self.reajustes = [];
+
 	$scope.menu = menuService.pthOrcado.menu;
 	menuService.pthOrcado.activeByText('Aprovações');
 

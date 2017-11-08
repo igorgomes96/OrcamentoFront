@@ -31,9 +31,9 @@
 				<td>{{s.Qtda}}</td>
 				<td>R$ {{s.Salario | number:2}}</td>
 				<td>
+					<button class="btn btn-xs btn-info pull-right" data-toggle="modal" data-target="#modal-info-contratacao" ng-click="ct.contratacaoSelecionada = s"><i class="fa fa-info"></i></button>
 					<button class="btn btn-xs btn-danger pull-right"><i class="fa fa-thumbs-down"></i></button>
 					<button class="btn btn-xs btn-success pull-right" ng-click="ct.aprovarContratacao(s)"><i class="fa fa-thumbs-up"></i></button>
-					<button class="btn btn-xs btn-info pull-right" data-toggle="modal" data-target="#modal-info-contratacao" ng-click="ct.contratacaoSelecionada = s"><i class="fa fa-info"></i></button>
 				</td>
 			</tr>
 		</tbody>

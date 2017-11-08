@@ -1,12 +1,12 @@
-angular.module('orcamentoApp').controller('pthRealAprovacoesCtrl', ['menuService', '$scope', 'pthRealSolicitacoesApi', function(menuService, $scope, pthRealSolicitacoesApi) {
+angular.module('orcamentoApp').controller('pthGestorSolicitacoesCtrl', ['menuService', '$scope', 'pthRealSolicitacoesApi', function(menuService, $scope, pthRealSolicitacoesApi) {
 
 	var self = this;
 
 	self.contratacoes = [];
 	self.reajustes = [];
 
-	$scope.menu = menuService.pthReal.menu;
-	menuService.pthReal.activeByText('Aprovações');
+	$scope.menu = menuService.pthGestor.menu;
+	menuService.pthGestor.activeByText('Solicitações');
 
 	var loadSolicitacoesContratacoes = function() {
 		pthRealSolicitacoesApi.getPthRealSolicitacoesContratacoes()
